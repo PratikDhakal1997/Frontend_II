@@ -1,0 +1,1322 @@
+/* Style for importing fonts */
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap");
+
+/* Reset styles for all elements */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Global styles for the HTML element */
+html {
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  font-size: 16px;
+  height: 100%;
+}
+
+/* Global styles for the body element */
+body {
+  font-family: "Manrope", sans-serif;
+  min-height: 100%;
+  position: relative;
+}
+
+/* Styles for various heading elements */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Caveat", cursive;
+  margin-bottom: 2rem;
+}
+
+/* Styles for paragraph elements */
+p {
+  color: #252f37;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Styles for table elements */
+table {
+  border: 1px solid rgba(105, 115, 121, 0.5);
+  border-collapse: collapse;
+  font-size: 0.75rem;
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+table thead, table tbody {
+  border: 1px solid rgba(105, 115, 121, 0.5);
+}
+table tr {
+  border: 1px solid rgba(105, 115, 121, 0.5);
+}
+table tr th {
+  background-color: rgba(226, 63, 88, 0.1);
+  text-align: left;
+}
+table tr th, table tr td {
+  border: 1px solid rgba(105, 115, 121, 0.5);
+  padding: 0.5rem;
+}
+
+/* Styles for title elements */
+.title {
+  color: #E23F58;
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.title span {
+  display: inline-block;
+}
+.title span::after {
+  background-color: #E23F58;
+  content: "";
+  display: block;
+  height: 1px;
+  margin: 0 auto;
+  transition: all 0.2s ease-in-out;
+  width: 75%;
+}
+
+/* Styles for subtitle elements */
+.subtitle {
+  color: #E23F58;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+}
+
+/* Styles for responsive images */
+.img-responsive {
+  display: block;
+  height: auto;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+
+/* Styles for buttons */
+.button {
+  background-color: #E23F58;
+  border: 1px solid #E23F58;
+  border-radius: 22px;
+  color: white;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1rem;
+  line-height: 40px;
+  padding: 0 25px;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+.button:focus, .button:hover {
+  background-color: white;
+  color: #E23F58;
+}
+.button--wide {
+  width: 100%;
+}
+.button--white {
+  background-color: white;
+  border: 1px solid #697379;
+  color: #697379;
+}
+.button--white:focus, .button--white:hover {
+  background-color: #f9f9f8;
+  color: #252f37;
+}
+
+/* Other common styles */
+.main {
+  margin: 0;
+  position: relative;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 1rem;
+  max-width: 1200px;
+}
+
+/* Styles for the header section */
+.header {
+  background-color: white;
+  border: none;
+  margin: 0;
+  padding: 30px 0;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Styling for header navigation container */
+.header__nav {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 0 15px;
+  width: 100%;
+}
+
+/* Media query for changing layout on larger screens */
+@media only screen and (min-width: 768px) {
+  .header__nav {
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+}
+
+/* Styling for header brand/logo */
+.header__brand {
+  display: block;
+  height: 50px;
+  margin: 0 auto 1rem auto;
+  padding: 0;
+  width: 209px;
+}
+
+/* Media query for adjusting brand/logo margin on larger screens */
+@media only screen and (min-width: 768px) {
+  .header__brand {
+    margin: 0;
+  }
+}
+
+/* Styling for header brand/logo image */
+.header__brand img {
+  display: block;
+  height: 100%;
+  width: auto;
+}
+
+/* Styling for header list */
+.header__list {
+  list-style-type: none;
+  margin: 0 auto;
+}
+
+/* Media query for adjusting header list margin on larger screens */
+@media only screen and (min-width: 768px) {
+  .header__list {
+    margin: 0;
+  }
+}
+
+/* Styling for header list items */
+.header__list-item {
+  float: left;
+}
+
+/* Styling for active header list items */
+.header__list-item.active a,
+.header__list-item.active a:focus,
+.header__list-item.active a:hover {
+  color: #697379;
+}
+
+/* Styling for active header list items after pseudo-element */
+.header__list-item.active a::after,
+.header__list-item.active a:focus::after,
+.header__list-item.active a:hover::after {
+  background-color: #E23F58;
+  width: 75%;
+}
+
+/* Styling for header list item links */
+.header__list-item a {
+  color: #697379;
+  display: block;
+  text-decoration: none;
+  line-height: 30px;
+  padding: 0 0.25rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Styling for header list item link after pseudo-element */
+.header__list-item a::after {
+  background-color: transparent;
+  content: "";
+  display: block;
+  height: 1px;
+  transition: all 0.2s ease-in-out;
+  width: 0;
+}
+
+/* Styling for header list item link when focused or hovered */
+.header__list-item a:focus,
+.header__list-item a:hover {
+  color: #252f37;
+}
+
+/* Styling for header list item link after pseudo-element when focused or hovered */
+.header__list-item a:focus::after,
+.header__list-item a:hover::after {
+  background-color: #E23F58;
+  width: 75%;
+}
+
+/* Styling for header list item cart */
+.header__list-item__cart {
+  background-color: #f9f9f8;
+  vertical-align: middle;
+}
+
+/* Styling for header list item cart count */
+.header__list-item__cart-count {
+  background-color: #E23F58;
+  border-radius: 0.5rem;
+  color: white;
+  display: inline-block;
+  font-size: 0.6rem;
+  font-weight: 600;
+  line-height: 1rem;
+  min-width: 1rem;
+  text-align: center;
+  vertical-align: top;
+}
+
+/* Styling for the hero section background */
+.hero {
+  background-color: #f9f9f8;
+  width: 100%;
+}
+
+/* Styling for the container within the hero section */
+.hero__container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 1200px;
+  padding: 20px 15px;
+  width: 100%;
+}
+
+/* Responsive layout change for larger screens */
+@media only screen and (min-width: 768px) {
+  .hero__container {
+    flex-direction: row;
+  }
+}
+
+/* Styling for the hero image container */
+.hero__img {
+  width: 50%;
+}
+
+/* Styling for the hero image inside its container */
+.hero__img img {
+  display: block;
+  height: auto;
+  width: 100%;
+}
+
+/* Styling for the text content in the hero section */
+.hero__info {
+  text-align: center;
+}
+
+/* Responsive text alignment change for larger screens */
+@media only screen and (min-width: 768px) {
+  .hero__info {
+    text-align: left;
+  }
+}
+
+/* Styling for the hero title */
+.hero__info-title {
+  color: #E23F58;
+  font-size: 3rem;
+  margin: 0 0 2rem 0;
+}
+
+/* Larger font size for the hero title on larger screens */
+@media only screen and (min-width: 768px) {
+  .hero__info-title {
+    font-size: 4rem;
+  }
+}
+
+/* Styling for the hero text content */
+.hero__info-text {
+  color: #697379;
+  line-height: 2rem;
+  margin: 0 0 2rem 0;
+}
+
+/* Styling for the hero button */
+.hero__info-button {
+  background-color: #E23F58;
+  border: 1px solid #E23F58;
+  border-radius: 20px;
+  color: white;
+  display: inline-block;
+  line-height: 40px;
+  padding: 0 25px;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Styling for the hero button on focus and hover */
+.hero__info-button:focus,
+.hero__info-button:hover {
+  background-color: white;
+  color: #E23F58;
+}
+
+/* Styling for the categories section */
+.categories {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+/* Grid layout for category content, responsive columns */
+.categories__content {
+  display: grid;
+  gap: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .categories__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .categories__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Styling for individual category items */
+.categories__item {
+  align-items: center;
+  background-image: url("../img/product-category-item-default.jpg");
+  background-position: center center;
+  background-size: auto 100%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  height: 250px;
+  justify-content: end;
+  overflow: hidden;
+  padding: 2rem;
+  position: relative;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Overlay gradient effect on category item */
+.categories__item::before {
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.75));
+  bottom: 0;
+  content: "";
+  display: block;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+/* Hover effect for category item */
+.categories__item:hover {
+  background-size: auto 110%;
+}
+
+/* Styling for category item title */
+.categories__item-title {
+  color: white;
+  font-size: 2.5rem;
+  margin: 0 0 0.5rem 0;
+  position: relative;
+}
+
+/* Styling for category item description */
+.categories__item-description {
+  color: #f9f9f8;
+  font-size: 0.8rem;
+  line-height: 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+/* Styling for category item button */
+.categories__item-button {
+  background-color: transparent;
+  border-radius: 20px;
+  border: 1px solid white;
+  color: white;
+  font-size: 0.8rem;
+  line-height: 40px;
+  padding: 0 20px;
+  position: relative;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Styling for category item button on focus and hover */
+.categories__item-button:focus,
+.categories__item-button:hover {
+  background-color: white;
+  color: #E23F58;
+}
+
+/* Styling for about section content */
+.about__content {
+  margin: 2rem 0;
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .about__content {
+    margin: 4rem 0;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Styling for about history section */
+.about__history {
+  background-color: #f9f9f8;
+  display: grid;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .about__history {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .about__history {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Styling for individual about history items */
+.about__history-item {
+  border: 1px solid #f9f9f8;
+  padding: 1rem;
+}
+
+/* Styling for about history item title */
+.about__history-item h4 {
+  color: #E23F58;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Styling for about history item description */
+.about__history-item p {
+  color: #697379;
+  font-size: 0.75rem;
+}
+
+/* Styling for highlighted about history items */
+.about__history-item--highlighted {
+  background-color: #E23F58;
+}
+
+/* Styling for highlighted about history item title and description */
+.about__history-item--highlighted h4 {
+  color: white;
+}
+
+.about__history-item--highlighted p {
+  color: white;
+}
+
+/* Styling for the products section */
+.products {
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+
+/* Grid layout for product content, responsive columns */
+.products__content {
+  display: grid;
+  gap: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .products__content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .products__content {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Styling for individual product items */
+.products__item {
+  border: 1px solid #f9f9f8;
+  border-radius: 1rem;
+  overflow: hidden;
+  transition: all 0.5s ease-in-out;
+}
+
+/* Hover effect for product items */
+.products__item:hover {
+  background-size: auto 110%;
+}
+
+/* Styling for product item thumbnail and on-sale label */
+.products__item-thumb {
+  position: relative;
+}
+
+.products__item-thumb img {
+  margin: 0;
+}
+
+.products__item-thumb__on-sale {
+  background-color: rgba(0, 0, 0, 0.65);
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.15rem;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  position: absolute;
+  text-transform: uppercase;
+  top: 1rem;
+}
+
+/* Styling for product item main content */
+.products__item-main {
+  padding: 1rem;
+}
+
+.products__item-main .price {
+  font-weight: 600;
+}
+
+.products__item-title {
+  color: #697379;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+.products__item-info {
+  text-align: center;
+}
+
+/* Styling for product item actions */
+.products__item-actions {
+  display: flex;
+}
+
+.products__item-actions a {
+  margin-right: 1rem;
+}
+
+.products__item-actions a,
+.products__item-actions button {
+  flex: 1;
+  font-size: 0.85rem;
+}
+
+/* Styling for individual product page */
+.product {
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+
+/* Styling for product breadcrumbs */
+.product__breadcrumbs {
+  border-bottom: 1px solid #697379;
+  display: flex;
+  list-style-type: none;
+  margin-bottom: 2rem;
+}
+
+.product__breadcrumbs li {
+  font-size: 0.8rem;
+  line-height: 2rem;
+}
+
+.product__breadcrumbs li + li {
+  margin-left: 1rem;
+}
+
+.product__breadcrumbs li a {
+  color: #252f37;
+  display: block;
+  text-decoration: none;
+  transition: all 0.2s ease-in-out;
+}
+
+.product__breadcrumbs li a:focus,
+.product__breadcrumbs li a:hover {
+  color: #E23F58;
+}
+
+.product__breadcrumbs li span {
+  color: #697379;
+  display: block;
+}
+
+/* Styling for product summary section */
+.product__summary {
+  display: grid;
+}
+
+@media only screen and (min-width: 768px) {
+  .product__summary {
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .product__summary {
+    grid-template-columns: 1fr 1fr;
+    gap: 8rem;
+  }
+}
+
+/* Styling for product info */
+.product__info {
+  margin-bottom: 2rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .product__info {
+    margin-bottom: 0;
+  }
+}
+
+.product__info-title {
+  color: #E23F58;
+  font-family: "Manrope", sans-serif;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+@media only screen and (min-width: 768px) {
+  .product__info-title {
+    font-size: 2.5rem;
+  }
+}
+
+.product__info-description {
+  margin-bottom: 4rem;
+}
+
+.product__info-description p {
+  font-size: 0.8rem;
+}
+
+.product__info-price {
+  margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  .product__info-price {
+    margin-bottom: 1.5rem;
+  }
+}
+
+.product__info-price .availability {
+  color: #697379;
+  font-family: "Manrope", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+}
+
+/* Media query for adjusting availability margin on larger screens */
+@media only screen and (min-width: 768px) {
+  .product__info-price .availability {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Styling for availability status */
+.product__info-price .availability .available {
+  background-color: #22AB86;
+  color: white;
+  display: inline-block;
+  padding: 0.25rem 1.5rem 0.25rem 0.5rem;
+}
+
+/* Styling for product amount */
+.product__info-price .amount {
+  color: #252f37;
+  font-family: "Manrope", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+/* Styling for product info form */
+.product__info-form {
+  background: #f9f9f8;
+  border-radius: 1rem;
+  display: flex;
+  padding: 1rem;
+}
+
+/* Styling for input number field */
+.product__info-form input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border: 1px solid #E23F58;
+  border-radius: 3px;
+  line-height: 42px;
+  margin: 0 0.5rem;
+  outline: none;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+/* Removing number input spinner */
+.product__info-form input[type=number]::-webkit-outer-spin-button,
+.product__info-form input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Styling for plus and minus buttons */
+.product__info-form .minus,
+.product__info-form .plus {
+  background-color: white;
+  border: 1px solid #697379;
+  color: #697379;
+  padding: 0;
+  width: 44px;
+}
+
+/* Styling for plus and minus buttons on focus and hover */
+.product__info-form .minus:focus,
+.product__info-form .minus:hover,
+.product__info-form .plus:focus,
+.product__info-form .plus:hover {
+  background-color: #697379;
+  color: white;
+}
+
+/* Styling for form button */
+.product__info-form button {
+  flex: 1;
+  margin-left: 1rem;
+}
+
+/* Styling for main product gallery image */
+.product__gallery-main {
+  border: 1px solid #697379;
+}
+
+/* Styling for product gallery thumbnails */
+.product__gallery-thumbs {
+  display: grid;
+  list-style-type: none;
+  gap: 1rem;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* Styling for product gallery thumbnail links */
+.product__gallery-thumbs li a {
+  border: 1px solid #697379;
+  display: block;
+  padding: 0.5rem;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Styling for product gallery thumbnail links on focus and hover */
+.product__gallery-thumbs li a:focus,
+.product__gallery-thumbs li a:hover {
+  border-color: #E23F58;
+}
+
+/* Styling for thumbnail images on focus and hover */
+.product__gallery-thumbs li a:focus img,
+.product__gallery-thumbs li a:hover img {
+  opacity: 1;
+}
+
+/* Styling for thumbnail images */
+.product__gallery-thumbs li a img {
+  margin: 0;
+  opacity: 0.5;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Styling for contact content */
+.contact__content {
+  display: grid;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+/* Media query for adjusting grid columns on larger screens */
+@media only screen and (min-width: 768px) {
+  .contact__content {
+    grid-template-columns: 2fr 1fr;
+  }
+}
+
+/* Styling for contact information list */
+.contact__info-list {
+  list-style-type: none;
+  margin-bottom: 2rem;
+}
+
+/* Styling for contact information list items */
+.contact__info-list li {
+  color: #697379;
+  margin-bottom: 0.5rem;
+}
+
+/* Styling for span elements within contact information list items */
+.contact__info-list li span {
+  color: #252f37;
+  font-weight: 600;
+}
+
+/* Styling for contact information map */
+.contact__info-map iframe {
+  border: 1px solid #E23F58;
+  height: 250px;
+  width: 100%;
+}
+
+/* Styling for contact form */
+.contact__form {
+  margin-top: 2rem;
+}
+
+/* Styling for contact form inputs container */
+.contact__form__inputs {
+  display: grid;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Media query for adjusting grid columns on larger screens */
+@media only screen and (min-width: 768px) {
+  .contact__form__inputs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Styling for contact form input container */
+.contact__form__inputs__input {
+  box-sizing: border-box;
+  display: block;
+  overflow: hidden;
+}
+
+/* Styling for contact form input */
+.contact__form__inputs__input input {
+  background-color: white;
+  border: 1px solid #697379;
+  color: #252f37;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 30px;
+  outline: none;
+  padding: 10px 15px;
+  transition: all 0.25s ease-in-out;
+  width: 100%;
+}
+
+/* Styling for contact form input placeholders */
+.contact__form__inputs__input input::-webkit-input-placeholder {
+  color: #697379;
+}
+
+.contact__form__inputs__input input::-moz-placeholder {
+  color: #697379;
+}
+
+.contact__form__inputs__input input:-ms-placeholder {
+  color: #697379;
+}
+
+.contact__form__inputs__input input:-moz-placeholder {
+  color: #697379;
+}
+
+/* Styling for focused contact form input */
+.contact__form__inputs__input input:focus {
+  border-color: #22AB86;
+}
+
+/* Styling for contact form message container */
+.contact__form__message__textarea {
+  margin-bottom: 1.5rem;
+}
+
+/* Styling for contact form message textarea */
+.contact__form__message__textarea textarea {
+  background-color: white;
+  border: 1px solid #697379;
+  color: #252f37;
+  display: block;
+  font-family: "Manrope", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 30px;
+  margin: 0;
+  outline: none;
+  padding: 15px;
+  resize: none;
+  transition: all 0.25s ease-in-out;
+  width: 100%;
+}
+
+/* Styling for contact form message textarea with error */
+.contact__form__message__textarea textarea.has-error {
+  border-color: rgba(255, 0, 0, 0.5);
+}
+
+/* Styling for contact form message textarea placeholders */
+.contact__form__message__textarea textarea::-webkit-input-placeholder {
+  color: #697379;
+}
+
+.contact__form__message__textarea textarea::-moz-placeholder {
+  color: #697379;
+}
+
+.contact__form__message__textarea textarea:-ms-placeholder {
+  color: #697379;
+}
+
+.contact__form__message__textarea textarea:-moz-placeholder {
+  color: #697379;
+}
+
+/* Styling for focused contact form message textarea */
+.contact__form__message__textarea textarea:focus {
+  background-color: #f9f9f8;
+}
+
+/* Styling for error message span within contact form message textarea */
+.contact__form__message__textarea span {
+  background-color: red;
+  color: white;
+  display: block;
+  font-size: 0.6em;
+  font-weight: 600;
+  padding: 2px 5px;
+  text-transform: uppercase;
+}
+
+/* Styling for cart section */
+.cart {
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+
+/* Styling for cart table title */
+.cart__table-title {
+  color: #E23F58;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin: 0 0 1rem 0;
+}
+
+/* Styling for quantity within cart table title */
+.cart__table-title .quantity {
+  color: #697379;
+}
+
+/* Styling for cart table header */
+.cart__table thead {
+  background-color: #f9f9f8;
+}
+
+/* Styling for cart table header row */
+.cart__table thead tr th {
+  background-color: transparent;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+/* Styling for cart table body rows */
+.cart__table tbody tr td {
+  color: #697379;
+  font-size: 1rem;
+}
+
+/* Styling for cart table item cell */
+.cart__table tbody tr td.item {
+  align-items: center;
+  border: none;
+  display: flex;
+  padding: 1rem;
+}
+
+/* Styling for cart table item cell image */
+.cart__table tbody tr td.item img {
+  border: 1px solid #252f37;
+  display: none;
+  margin: 0 1rem 0 0;
+  max-width: 4rem;
+}
+
+/* Media query for showing item image on larger screens */
+@media only screen and (min-width: 768px) {
+  .cart__table tbody tr td.item img {
+    display: block;
+  }
+}
+
+/* Styling for input number field within cart table */
+.cart__table tbody tr td input[type=number] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  border: 1px solid #252f37;
+  border-radius: 3px;
+  font-size: 1rem;
+  line-height: 42px;
+  margin: 0;
+  outline: none;
+  text-align: center;
+  margin: 0 0.5rem;
+  max-width: 4rem;
+  width: 100%;
+}
+
+/* Styling for input number field padding on larger screens */
+@media only screen and (min-width: 768px) {
+  .cart__table tbody tr td input[type=number] {
+    padding: 0 1rem;
+  }
+  
+  /* Removing number input spinner */
+  .cart__table tbody tr td input[type=number]::-webkit-outer-spin-button,
+  .cart__table tbody tr td input[type=number]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
+/* Styling for plus and minus buttons within cart table */
+.cart__table tbody tr td .minus,
+.cart__table tbody tr td .plus {
+  background-color: white;
+  border: 1px solid #697379;
+  color: #697379;
+  display: none;
+  padding: 0;
+  width: 44px;
+}
+
+/* Media query for showing plus and minus buttons on larger screens */
+@media only screen and (min-width: 768px) {
+  .cart__table tbody tr td .minus,
+  .cart__table tbody tr td .plus {
+    display: inline-block;
+  }
+}
+
+/* Styling for focused plus and minus buttons within cart table */
+.cart__table tbody tr td .minus:focus,
+.cart__table tbody tr td .minus:hover,
+.cart__table tbody tr td .plus:focus,
+.cart__table tbody tr td .plus:hover {
+  background-color: #697379;
+  color: white;
+}
+
+/* Styling for cart table footer rows */
+.cart__table tfoot tr {
+  background-color: #f9f9f8;
+}
+
+/* Styling for special styling of fourth footer row */
+.cart__table tfoot tr:nth-of-type(4) {
+  background-color: #252f37;
+}
+
+/* Styling for text color in fourth footer row */
+.cart__table tfoot tr:nth-of-type(4) td {
+  color: white;
+}
+
+/* Styling for cart table footer cells */
+.cart__table tfoot tr td {
+  color: #697379;
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 1rem;
+}
+
+/* Styling for cart form */
+.cart__form {
+  margin: 0 auto;
+  max-width: 48rem;
+  width: 100%;
+}
+
+/* Styling for cart form title */
+.cart__form-title {
+  color: #697379;
+  font-family: "Manrope", sans-serif;
+  font-size: 1.5rem;
+  margin: 0 0 0.5rem 0;
+  text-align: center;
+}
+
+/* Styling for cart form field container */
+.cart__form-field {
+  margin-bottom: 1rem;
+}
+
+/* Styling for cart form field label */
+.cart__form-field label {
+  color: #697379;
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.05rem;
+  margin: 0 0 0.5rem 0;
+  text-transform: uppercase;
+}
+
+/* Styling for cart form field input */
+.cart__form-field input {
+  background-color: white;
+  border: 1px solid #697379;
+  color: #252f37;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 2rem;
+  outline: none;
+  padding: 10px 15px;
+  transition: all 0.25s ease-in-out;
+  width: 100%;
+}
+
+/* Styling for cart form field input placeholders */
+.cart__form-field input::-webkit-input-placeholder {
+  color: #697379;
+}
+
+.cart__form-field input::-moz-placeholder {
+  color: #697379;
+}
+
+.cart__form-field input:-ms-placeholder {
+  color: #697379;
+}
+
+.cart__form-field input:-moz-placeholder {
+  color: #697379;
+}
+
+/* Styling for focused cart form field input */
+.cart__form-field input:focus {
+  border-color: #22AB86;
+}
+
+/*** Footer ***/
+
+/* Styling for footer section */
+.footer {
+  background-color: #E23F58;
+  padding: 2rem 0;
+}
+
+/* Styling for footer items container */
+.footer__items {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 0 1rem 1rem 1rem;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* Media query for changing layout on larger screens */
+@media only screen and (min-width: 768px) {
+  .footer__items {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+/* Styling for footer brand item */
+.footer__item-brand {
+  display: block;
+  font-size: 2rem;
+  height: 2rem;
+  margin-bottom: 2rem;
+  width: auto;
+}
+
+/* Media query for adjusting brand item margin on larger screens */
+@media only screen and (min-width: 768px) {
+  .footer__item-brand {
+    margin-bottom: 0;
+  }
+}
+
+/* Styling for footer item title */
+.footer__item-title {
+  color: white;
+  font-family: "Manrope", sans-serif;
+  font-weight: 600;
+  line-height: 2rem;
+}
+
+/* Styling for footer item list */
+.footer__item-list {
+  list-style-type: none;
+}
+
+/* Styling for address and links within footer item list */
+.footer__item-list address,
+.footer__item-list a {
+  color: white;
+  font-size: 1rem;
+  font-style: normal;
+  line-height: 2rem;
+  text-decoration: none;
+}
+
+/* Styling for footer copyright section */
+.footer__copyright {
+  border-top: 1px solid white;
+  margin: 4rem auto 0 auto;
+  padding: 2rem 1rem 0 1rem;
+  max-width: 1200px;
+  text-align: center;
+  width: 100%;
+}
+
+/* Styling for copyright paragraph within footer */
+.footer__copyright p {
+  color: white;
+  font-size: 0.8rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+}

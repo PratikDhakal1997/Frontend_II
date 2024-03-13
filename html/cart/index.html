@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savoria - Your food tent</title>
+    <link
+      rel="shortcut icon"
+      href="../../img/favicon.png"
+      type="image/x-icon"
+    >
+    <link rel="stylesheet" href="../../css/main.css">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <a class="header__brand" href="../../index.html">
+          <img src="../../img/savoria-logo.svg" alt="Logo" />
+        </a>
+        <ul class="header__list">
+          <li class="header__list-item"><a href="../../index.html">Home</a></li>
+          <li class="header__list-item">
+            <a href="../about.html">About</a>
+          </li>
+          <li class="header__list-item">
+            <a href="../contact.html">Contact</a>
+          </li>
+          <li class="header__list-item active">
+            <a class="header__list-item__cart" href="./index.html"
+              >Cart <span class="header__list-item__cart-count">7</span></a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- end .header -->
+    <main class="main">
+      <section class="container cart">
+        <h3 class="title"><span>My cart</span></h3>
+        <div class="cart__content">
+          <img class="img-responsive" src="../../img/cart-main.jpg" alt="My cart">
+          <table class="cart__table">
+            <h4 class="cart__table-title">Shopping cart <span class="quantity">(7 items)</span></h4>
+            <thead>
+              <tr>
+                <th>Item</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="item">
+                  <img
+                    class="img-responsive"
+                    src="../../img/product-chilean-empanadas.jpg"
+                    alt="Baked empanadas"
+                  />
+                  <span>Baked empanadas</span>
+                </td>
+                <td>$40.00</td>
+                <td>
+                  <input class="button minus" type="button" value="-" />
+                  <input
+                    type="number"
+                    name="quantity"
+                    id="quantity"
+                    min="1"
+                    max="12"
+                    value="3"
+                  >
+                  <input class="button plus" type="button" value="+" />
+                </td>
+                <td>$280.00</td>
+              </tr>
+              <tr>
+                <td class="item">
+                  <img
+                    class="img-responsive"
+                    src="../../img/product-chilean-paila-marina.jpg"
+                    alt="Baked empanadas"
+                  />
+                  <span>Paila marina</span>
+                </td>
+                <td>$60.00</td>
+                <td>
+                  <input class="button minus" type="button" value="-" />
+                  <input
+                    type="number"
+                    name="quantity"
+                    id="quantity"
+                    min="1"
+                    max="12"
+                    value="2"
+                  >
+                  <input class="button plus" type="button" value="+" />
+                </td>
+                <td>$120.00</td>
+              </tr>
+              <tr>
+                <td class="item">
+                  <img
+                    class="img-responsive"
+                    src="../../img/product-chilean-corn-pie.jpg"
+                    alt="Baked empanadas"
+                  />
+                  <span>Chilean corn pie</span>
+                </td>
+                <td>$70.00</td>
+                <td>
+                  <input class="button minus" type="button" value="-" />
+                  <input
+                    type="number"
+                    name="quantity"
+                    id="quantity"
+                    min="1"
+                    max="12"
+                    value="2"
+                  >
+                  <input class="button plus" type="button" value="+" />
+                </td>
+                <td>$140.00</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td colspan="3">Subtotal</td>
+                <td>$540.00</td>
+              </tr>
+              <tr>
+                <td colspan="3">Shipping</td>
+                <td>$10.00</td>
+              </tr>
+              <tr>
+                <td colspan="3">Taxes</td>
+                <td>$82.50</td>
+              </tr>
+              <tr>
+                <td colspan="3">Total</td>
+                <td>$632.50</td>
+              </tr>
+            </tfoot>
+          </table>
+          <!-- end .cart__table -->
+          <form class="cart__form" action="../complete_page.html" method="post">
+            <h4 class="cart__form-title">Complete you order</h4>
+            <div class="cart__form-field">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Name"
+                required
+              />
+            </div>
+            <div class="cart__form-field">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+            <div class="cart__form-field">
+              <label for="address">Address</label>
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="Address"
+                required
+              />
+            </div>
+            <div class="cart__form-field">
+              <label for="card-number">Card number</label>
+              <input
+                type="text"
+                id="card-number"
+                name="card-number"
+                placeholder="**** **** **** ****"
+                required
+              />
+            </div>
+            <div class="cart__form-field">
+              <label for="expiry-date">Expiry date</label>
+              <input
+                type="text"
+                id="expiry-date"
+                name="expiry-date"
+                placeholder="MM/YY"
+                required
+              />
+            </div>
+            <div class="cart__form-field">
+              <label for="security-number">Security number</label>
+              <input
+                type="password"
+                id="security-number"
+                name="security-number"
+                maxlength="3"
+                placeholder="***"
+                required
+              />
+            </div>  
+              <button class="button button--wide" type="submit">
+              Submit Order
+            </button>          
+          </form>
+          <!-- end .cart__form -->
+        </div>
+        <!-- end .cart__content -->
+      </section>
+      <!-- end .cart -->
+    </main>
+    <!-- end .main -->
+    <footer class="footer">
+      <div class="footer__items">
+        <div class="footer__item">
+          <img
+            class="footer__item-brand"
+            src="../../img/savoria-logo-white.svg"
+            alt="Logo"
+          />
+        </div>
+        <!-- end .footer__item -->
+        <div class="footer__item">
+          <h3 class="footer__item-title">Contact</h3>
+          <ul class="footer__item-list">
+            <li>
+              <address>265 Yorkland Blvd #400, North York, ON M2J 1S5</address>
+            </li>
+            <li><a href="mailto:contact@savoria.ca">contact@savoria.ca</a></li>
+            <li><a href="tel:+14164852098">+1 (416) 485-2098</a></li>
+          </ul>
+        </div>
+      </div>
+      <!-- end .footer__item -->
+      <div class="footer__copyright">
+        <p>Savoria&copy; 2023, all rights reserved</p>
+      </div>
+    </footer>
+    <!-- end .footer -->
+  </body>
+</html>

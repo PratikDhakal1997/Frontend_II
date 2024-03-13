@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savoria - Your food tent</title>
+    <link
+      rel="shortcut icon"
+      href="../../img/favicon.png"
+      type="image/x-icon"
+    >
+    <link rel="stylesheet" href="../../css/main.css">
+  </head>
+  <body>
+    <header class="header">
+      <nav class="header__nav">
+        <a class="header__brand" href="../../index.html">
+          <img src="../../img/savoria-logo.svg" alt="Logo">
+        </a>
+        <ul class="header__list">
+          <li class="header__list-item"><a href="../../index.html">Home</a></li>
+          <li class="header__list-item active">
+            <a href="../../about.html">About</a>
+          </li>
+          <li class="header__list-item">
+            <a href="./contact.html">Contact</a>
+          </li>
+          <li class="header__list-item">
+            <a class="header__list-item__cart" href="../cart/index.html">Cart <span class="header__list-item__cart-count">7</span></a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main class="main">
+      <section class="container product">
+        <ul class="product__breadcrumbs">
+          <li><a href="../../index.html">Home</a></li>
+          <li><a href="./index.html">Products</a></li>
+          <li><span>Chilean empanadas</span></li>
+        </ul>
+        <div class="product__summary">
+          <div class="product__info">
+            <h3 class="product__info-title">Chilean empanadas</h3>
+            <div class="product__info-description">
+              <p>
+                Indulge in our mouthwatering Chilean Empanadas, a fusion of rich
+                flavors and culinary traditions inspired by Chile's vibrant
+                cuisine. Handcrafted with love and precision, each empanada
+                features a golden, flaky pastry shell filled with savory
+                delights like seasoned beef, onions, olives, or a heavenly
+                combination of melted cheese and mild green chili. For a
+                vegetarian option, our spinach and cheese empanada offers a
+                wholesome alternative. Passed down through generations, our
+                recipe embodies Chile's culinary heritage, making each bite an
+                authentic and unforgettable experience. Whether a quick snack or
+                a scrumptious meal, our empanadas promise to satisfy all palates
+                and add a touch of Chilean flair to any dining occasion. ¡Buen
+                provecho!
+              </p>
+            </div>
+            <div class="product__info-price">
+              <p class="availability">
+                <span class="available">In stock</span>
+              </p>
+              <p class="amount">$40.00</p>
+            </div>
+            <form
+              class="product__info-form"
+              action="./product-details.html"
+              method="post"
+            >
+              <input class="button minus" type="button" value="-" />
+              <input
+                type="number"
+                step="1"
+                min="1"
+                max="100"
+                name="quantity"
+                value="1"
+                title="Quantity"
+                size="4"
+                pattern="[0-9]*"
+                inputmode="numeric"
+              />
+              <input class="button plus" type="button" value="+" />
+              <button class="button" type="submit">Add to cart</button>
+            </form>
+          </div>
+          <div class="product__gallery">
+            <img
+              class="img-responsive product__gallery-main"
+              src="../../img/product-chilean-empanadas-main.jpg"
+              alt="Chilean empanadas"
+            >
+            <ul class="product__gallery-thumbs">
+              <li>
+                <a href="#">
+                  <img
+                    class="img-responsive"
+                    src="../../img/product-chilean-empanadas-main.jpg"
+                    alt="Chilean empanadas"
+                  >
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="img-responsive"
+                    src="../../img/product-chilean-empanadas-main.jpg"
+                    alt="Chilean empanadas"
+                  >
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="img-responsive"
+                    src="../../img/product-chilean-empanadas-main.jpg"
+                    alt="Chilean empanadas"
+                  >
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <img
+                    class="img-responsive"
+                    src="../../img/product-chilean-empanadas-main.jpg"
+                    alt="Chilean empanadas"
+                  >
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer__items">
+        <div class="footer__item">
+          <img
+            class="footer__item-brand"
+            src="../../img/savoria-logo-white.svg"
+            alt="Logo"
+          >
+        </div>
+        <div class="footer__item">
+          <h3 class="footer__item-title">Contact</h3>
+          <ul class="footer__item-list">
+            <li>
+              <address>265 Yorkland Blvd #400, North York, ON M2J 1S5</address>
+            </li>
+            <li><a href="mailto:contact@savoria.ca">contact@savoria.ca</a></li>
+            <li><a href="tel:+14164852098">+1 (416) 485-2098</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__copyright">
+        <p>Savoria&copy; 2023, all rights reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>
