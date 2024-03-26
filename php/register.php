@@ -17,7 +17,7 @@ if (!$conn) {
 
 // Check if the form was submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  
+
   // Get form data and sanitize it
   $firstname = mysqli_real_escape_string($conn, $_POST["first_name"]);
   $lastname = mysqli_real_escape_string($conn, $_POST["last_name"]);
@@ -31,11 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Hash the password using bcrypt
   $hashed_password = password_hash($password, PASSWORD_BCRYPT);
-  
+
   // Prepare the SQL query to insert the data into the database
   $sql = "INSERT INTO users (first_name, last_name, email, phone, password, address, postal_code, dob, gender)
           VALUES ('$firstname', '$lastname', '$email','$phone', '$hashed_password','$address','$postal','$dob','$gender')";
-  
+
   // Execute the query and check for errors
   if (mysqli_query($conn, $sql)) {
     // Get the last insert ID
@@ -48,9 +48,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       // Store the first name in session
       $_SESSION['username'] = $row['first_name'];
 
-    header('Location: ../index.php');
-  }} else {
+      header('Location: ../index.php');
+    }
+  } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
   }
 }
-?>
