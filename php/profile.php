@@ -21,10 +21,31 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
     <title>Savoria - Your food tent</title>
     <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="../css/main.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
-    <!-- jQuery Modal -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.1/jquery-ui.min.js"></script>
+    <style>
+        .artdiv {
+            padding: 5px;
+            margin: 5px;
+            background-color: #80ff80;
+        }
+
+        #editForm {
+            display: none;
+        }
+
+        #editbtn {
+            background-color: #007bff;
+            color: #fff;
+            border-radius: 5px;
+            padding: 10px 20px;
+            border: none;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -83,36 +104,33 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                     <h3 class="username">postal_code: <?php echo $details['postal_code'] ?></h3>
                     <h3 class="username">dob: <?php echo $details['dob'] ?></h3>
                     <h3 class="username">gender: <?php echo $details['gender'] ?></h3>
-                    <a href="#" type="button" class="button" id="openModal">Open Modal</button>
+                    <button id="editbtn" style="" class="btn btn-primary">Edit</button>
                 </div>
             </div>
         </section>
 
-        <!-- Modal HTML -->
-        <div id="myModal" class="modal">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <!-- Modal Header -->
-                    <div class="modal-header">
-                        <h4 class="modal-title">Update Email</h4>
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    </div>
+        <div id="editForm">
+            <form>
+                <input type="hidden" id="artid">
+                <label for="firstname">firstname:</label><br>
+                <input type="text" id="firstname" name="firstname" value="<?php echo $details['first_name'] ?>"><br>
+                <label for=" lastname">lastname:</label><br>
+                <input type="text" id="lastname" name="lastname" value="<?php echo $details['last_name'] ?>"><br>
+                <label for="email">email:</label><br>
+                <input type="text" id="email" name="email" value="<?php echo $details['email'] ?>"><br>
+                <label for="phone">phone:</label><br>
+                <input type="number" id="phone" name="phone" value="<?php echo $details['phone'] ?>"><br>
+                <label for="address">address:</label><br>
+                <input type="text" id="address" name="address" value="<?php echo $details['address'] ?>"><br>
+                <label for="postalcode">postalcode:</label><br>
+                <input type="text" id="postalcode" name="postalcode" value="<?php echo $details['postal_code'] ?>"><br>
+                <label for="dob">dob:</label><br>
+                <input type="text" id="dob" name="dob" value="<?php echo $details['dob'] ?>"><br>
 
-                    <!-- Modal Body -->
-                    <div class="modal-body">
-                        <form id="updateEmailForm" method="post" action="update_email.php">
-                            <div class="form-group">
-                                <label for="newEmail">New Email:</label>
-                                <input type="email" class="form-control" id="newEmail" name="newEmail">
-                            </div>
-                            <button type="submit" class="btn btn-primary">Update</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
+                <label for="gender">gender:</label><br>
+                <input type="text" id="gender" name="gender" value="<?php echo $details['gender'] ?>"><br>
+            </form>
         </div>
-
-        <!-- Button to trigger modal -->
 
 
 
@@ -144,3 +162,26 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 </body>
 
 </html>
+
+<script>
+    $(document).ready(function() {
+
+        $("button").click(function() {
+            console.log('here');
+
+            //open the edit form as a modal
+            $("#editForm").dialog({
+                title: "Edit Profile Details",
+                width: 500,
+                modal: true,
+                buttons: {
+                    "Save": function() {
+                        //send the edited values to the server
+                        console.log('here')
+
+                    }
+                }
+            });
+        });
+    });
+</script>
