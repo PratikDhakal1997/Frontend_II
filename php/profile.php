@@ -35,7 +35,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             display: none;
         }
 
-        #editbtn {
+        .btn {
             background-color: #007bff;
             color: #fff;
             border-radius: 5px;
@@ -104,31 +104,72 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                     <h3 class="username">postal_code: <?php echo $details['postal_code'] ?></h3>
                     <h3 class="username">dob: <?php echo $details['dob'] ?></h3>
                     <h3 class="username">gender: <?php echo $details['gender'] ?></h3>
-                    <button id="editbtn" style="" class="btn btn-primary">Edit</button>
+                    <button id="editbtn" class="btn">Edit</button>
                 </div>
             </div>
         </section>
 
         <div id="editForm">
-            <form>
+            <form action="edit_profile.php" id="edit_profile" method="post">
                 <input type="hidden" id="artid">
                 <label for="firstname">firstname:</label><br>
-                <input type="text" id="firstname" name="firstname" value="<?php echo $details['first_name'] ?>"><br>
+                <input type="text" id="firstname" name="firstname" value="<?php echo $details['first_name'] ?>" required><br>
+                <div id="firstnameMessage"></div> <br>
                 <label for=" lastname">lastname:</label><br>
-                <input type="text" id="lastname" name="lastname" value="<?php echo $details['last_name'] ?>"><br>
+                <input type="text" id="lastname" name="lastname" value="<?php echo $details['last_name'] ?> " required><br>
+                <div id="lastnameMessage"></div> <br>
+                <label for=" password">password:</label><br>
+                <input type="password" id="password" name="password" value="<?php echo $details['password'] ?>" onkeyup="passwordCheck()" required><br>
+                <div id="passwordMessage"></div> <br>
+
                 <label for="email">email:</label><br>
-                <input type="text" id="email" name="email" value="<?php echo $details['email'] ?>"><br>
+                <input type="text" id="Email" name="email" value="<?php echo $details['email'] ?>" onkeyup='emailCheck();' required><br>
+                <div id="emailMessgage"></div> <br>
                 <label for="phone">phone:</label><br>
-                <input type="number" id="phone" name="phone" value="<?php echo $details['phone'] ?>"><br>
+                <input type="number" id="phone" name="phone" value="<?php echo $details['phone'] ?>" required><br>
+                <div id="phoneMessage"></div> <br>
                 <label for="address">address:</label><br>
-                <input type="text" id="address" name="address" value="<?php echo $details['address'] ?>"><br>
+                <input type="text" id="address" name="address" value="<?php echo $details['address'] ?>" required><br>
+                <div id="addressMessage"></div> <br>
                 <label for="postalcode">postalcode:</label><br>
-                <input type="text" id="postalcode" name="postalcode" value="<?php echo $details['postal_code'] ?>"><br>
+                <input type="text" id="postalcode" name="postalcode" value="<?php echo $details['postal_code'] ?>" required><br>
+                <div id="postalcodeMessage"></div> <br>
                 <label for="dob">dob:</label><br>
-                <input type="text" id="dob" name="dob" value="<?php echo $details['dob'] ?>"><br>
+                <input type="text" id="datepicker" name="dob" value="<?php echo $details['dob'] ?>" required><br>
+                <div id="datePickerMessage"></div> <br>
+
 
                 <label for="gender">gender:</label><br>
-                <input type="text" id="gender" name="gender" value="<?php echo $details['gender'] ?>"><br>
+
+                <div class="input-field input-dropdown">
+
+                    <select name="mySelect" id="mySelect">
+
+                        <option value="<?php echo $details['gender'] ?>"> <?php echo strtoupper($details['gender']) ?> </option>
+
+                        <?php
+                        if ($details['gender'] != 'male') {
+
+                        ?>
+                            <option value="male">MALE</option>
+
+                        <?php
+                        }
+                        ?>
+
+                        <?php
+                        if ($details['gender'] != 'female') {
+
+                        ?>
+                            <option value="female">FEMALE</option>
+
+                        <?php
+                        }
+                        ?>
+                        <option value="other">Prefer Not to say</option>
+                    </select>
+                </div>
+                <input id="savebtn" type="submit" class="btn">
             </form>
         </div>
 
@@ -166,6 +207,13 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 <script>
     $(document).ready(function() {
 
+        $("#datepicker").datepicker({
+            dateFormat: "yy-mm-dd", // Set date format to YYYY-MM-DD
+            changeYear: true, // Enable changing the year
+            changeMonth: true, // Enable changing the month
+            yearRange: "1950:2008" // Limit the year range from 1950 to 2008
+        });
+
         $("button").click(function() {
             console.log('here');
 
@@ -174,14 +222,91 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                 title: "Edit Profile Details",
                 width: 500,
                 modal: true,
-                buttons: {
-                    "Save": function() {
-                        //send the edited values to the server
-                        console.log('here')
+                // buttons: {
+                //     "Save": function() {
 
-                    }
-                }
+
+                //     }
+                // }
             });
         });
+
+        $("#edit_profile").on("submit", function(e) {
+            // Perform HTML5 validation check
+            if (this.checkValidity()) {
+                // Initialize jQuery validation
+                $(this).validate({
+                    rules: {
+                        email: {
+                            required: true,
+                            email: true // Ensure the input is a valid email address
+                        },
+                        mySelect: {
+                            required: true // Ensure a selection is made
+                        }
+                    },
+                    messages: {
+                        email: {
+                            required: "Please enter an email address",
+                            email: "Please enter a valid email address"
+                        },
+                        mySelect: {
+                            required: "Please select your gender"
+                        }
+                    },
+                    errorPlacement: function(error, element) {
+                        // Custom placement for error messages
+                        if (element.attr("name") == "email") {
+                            error.appendTo("#email_error");
+                        } else if (element.attr("name") == "mySelect") {
+                            error.appendTo("#gender_error");
+                        } else {
+                            error.insertAfter(element);
+                        }
+                    }
+                });
+
+                // Prevent form submission if validation fails
+                if (!$(this).valid() || !check()) {
+                    e.preventDefault();
+                }
+            } else {
+                // Prevent form submission if HTML5 validation fails
+                e.preventDefault();
+            }
+        });
+
+
     });
+
+    // Function to validate email format
+    var emailCheck = function() {
+        var email = document.getElementById('Email').value;
+        var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; // Regex for email validation
+
+        if (regex.test(email)) {
+            document.getElementById('emailMessgage').innerHTML = '';
+            return true;
+        } else {
+            document.getElementById('emailMessgage').style.color = 'red';
+            document.getElementById('emailMessgage').innerHTML = 'Enter Valid Email Format';
+            return false;
+        }
+    };
+
+    // Function to validate password length
+    var passwordCheck = function() {
+        var password = document.getElementById('password').value;
+        console.log(password)
+        var regex = /^.{8,}$/; // Regex for minimum 8 characters
+
+        if (regex.test(password)) {
+            document.getElementById('passwordMessage').innerHTML = '';
+            return true;
+        } else {
+            document.getElementById('passwordMessage').style.color = 'red';
+            document.getElementById('passwordMessage').innerHTML = 'length should be 8 digit long';
+            return false;
+        }
+    };
 </script>
