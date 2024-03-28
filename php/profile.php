@@ -63,7 +63,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
         .card {
             background-color: #fff;
             border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 20px #E23F58;
             padding: 30px;
         }
 
@@ -339,6 +339,29 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 <script>
     $(document).ready(function() {
 
+
+        $('.card').mouseenter(function() {
+
+
+            $(this).animate({
+                // Define the CSS properties you want to animate
+                width: '700px', // Expand the width
+                height: '600px', // Expand the height
+                marginLeft: '50px', // Move the card to the right
+                marginTop: '50px' // Move the card down
+            }, 500); // Animation duration in milliseconds
+        });
+
+        $('.card').mouseleave(function() {
+            $(this).animate({
+                // Define the CSS properties you want to animate
+                width: '500px', // Expand the width
+                height: '400px', // Expand the height
+                marginLeft: '50px', // Move the card to the right
+                marginTop: '50px' // Move the card down
+            }, 500); // Animation duration in milliseconds
+
+        });
         $("#datepicker").datepicker({
             dateFormat: "yy-mm-dd", // Set date format to YYYY-MM-DD
             changeYear: true, // Enable changing the year
@@ -360,6 +383,16 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 
                 //     }
                 // }
+            });
+
+            // Slide down animation to open the edit form
+            $("#editForm").slideDown({
+                duration: 500, // Animation duration in milliseconds
+                easing: "swing", // Animation easing type
+                complete: function() { // Optional callback function
+                    // Focus on the first input field after animation completion
+                    $("#firstname").focus();
+                }
             });
         });
 

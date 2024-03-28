@@ -36,6 +36,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Flag to track user existence
     $_SESSION["userExist"] = false;
 
+
+
     // Check if user exists
     if (mysqli_num_rows($result) > 0) {
         $_SESSION["userExist"] = "true";
@@ -45,6 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verify the password
         if (password_verify($formPassword, $row["password"])) {
+            var_dump($row['password']);
             // Password is correct, set session variables
             $_SESSION["username"] = $row["first_name"];
             $_SESSION["email"] = $row["email"];

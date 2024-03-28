@@ -1,4 +1,5 @@
 <?php
+
 // session_start();
 $servername = "localhost";
 $username = "root";
@@ -21,6 +22,8 @@ $stmt->execute();
 
 // Get result
 $result = $stmt->get_result();
+
+// var_dump($_SESSION(''))
 
 // Check if any rows were returned
 $details = array();
