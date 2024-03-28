@@ -3,8 +3,8 @@ session_start();
 
 // Define database connection variables
 $servername = "localhost";
-$username = "web";
-$password = "web";
+$username = "root";
+$password = "";
 $dbname = "example_db";
 
 // Create connection
