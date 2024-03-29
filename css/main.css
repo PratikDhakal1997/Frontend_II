@@ -1320,3 +1320,15 @@ table tr th, table tr td {
   letter-spacing: 0.2rem;
   text-transform: uppercase;
 }
+
+
+.profile-picture{
+  height: 100px;
+  width: 100px;
+}
+.container-profile {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
