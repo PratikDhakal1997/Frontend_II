@@ -1,5 +1,20 @@
+<?php
+// Start the session
+session_start();
+if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
+  // Set the link URL and text based on the session variable
+  $linkUrl = "index.php"; // Example link
+  $linkText = "Welcome, " . htmlspecialchars($_SESSION["username"]);
+  $profileLink = "php/profile.php";
+} else {
+  // Default link URL and text if the session variable is not set
+  $linkUrl = "./php/login_register.php"; // Example link
+  $linkText = "Login";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
+
 
 <head>
   <meta charset="UTF-8">
@@ -7,7 +22,6 @@
   <title>Savoria - Your food tent</title>
   <link rel="shortcut icon" href="./img/favicon.png" type="image/x-icon">
   <link rel="stylesheet" href="./css/main.css">
-
 </head>
 
 <body>
@@ -27,9 +41,23 @@
           <a href="./html/contact.html">Contact</a>
         </li>
         <li class="header__list-item">
-          <a class="header__list-item__cart" href="./html/cart/index.html">Cart <span
-              class="header__list-item__cart-count">7</span></a>
+          <a class="header__list-item__cart" href="./html/cart/index.html">Cart <span class="header__list-item__cart-count">7</span></a>
         </li>
+        <?php
+        if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
+
+        ?>
+          <li class="header__list-item">
+            <a href="<?php echo $profileLink; ?>">view profile</a>
+          </li>
+        <?php
+        }
+        ?>
+        <li class="header__list-item">
+          <a href="<?php echo $linkUrl; ?>"><?php echo $linkText; ?></a>
+        </li>
+
+
       </ul>
     </nav>
   </header>
