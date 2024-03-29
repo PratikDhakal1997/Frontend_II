@@ -1,3 +1,16 @@
+<?php
+// Start the session
+session_start();
+if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
+  // Set the link URL and text based on the session variable
+  $linkUrl = "index.php"; // Example link
+  $linkText = "Welcome, " . htmlspecialchars($_SESSION["username"]);
+} else {
+  // Default link URL and text if the session variable is not set
+  $linkUrl = "./php/login_register.php"; // Example link
+  $linkText = "Login";
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -27,6 +40,9 @@
             <a class="header__list-item__cart" href="./html/cart/index.html"
               >Cart <span class="header__list-item__cart-count">7</span></a
             >
+          </li>
+          <li class="header__list-item">       
+            <a href="<?php echo $linkUrl; ?>"><?php echo $linkText; ?></a>
           </li>
         </ul>
       </nav>
