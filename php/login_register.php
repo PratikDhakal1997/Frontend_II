@@ -19,6 +19,7 @@ if (isset($_SESSION['page_load_count'])) {
 ?>
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,8 +30,9 @@ if (isset($_SESSION['page_load_count'])) {
     <script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.13.1/jquery.validate.min.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="../lib/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 </head>
+
 <body>
     <div class="container">
         <div class="forms-container">
@@ -146,4 +148,3 @@ if (isset($_SESSION['page_load_count'])) {
     <script src="../js/login.js"></script>
 </body>
 </html>
-
