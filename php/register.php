@@ -47,7 +47,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $row = mysqli_fetch_assoc($result);
       // Store the first name in session
       $_SESSION['username'] = $row['first_name'];
-      $_SESSION['email'] = $row['email'];
+      $_SESSION['email'] = $email;
+
+  
 
       
       header('Location: ../index.php');
