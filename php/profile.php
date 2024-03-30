@@ -206,13 +206,13 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             </a>
             <ul class="header__list">
                 <li class="header__list-item active">
-                    <a href="./index.php">Home</a>
+                    <a href="../index.php">Home</a>
                 </li>
                 <li class="header__list-item">
-                    <a href="./html/about.html">About</a>
+                    <a href="../html/about.html">About</a>
                 </li>
                 <li class="header__list-item">
-                    <a href="./html/contact.html">Contact</a>
+                    <a href="../html/contact.html">Contact</a>
                 </li>
                 <?php
                 if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
@@ -289,7 +289,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
     <footer class="footer">
         <div class="footer__items">
             <div class="footer__item">
-                <img class="footer__item-brand" src="./img/savoria-logo-white.svg" alt="Logo" />
+                <img class="footer__item-brand" src="../img/savoria-logo-white.svg" alt="Logo" />
             </div>
             <div class="footer__item">
                 <h3 class="footer__item-title">Contact</h3>
