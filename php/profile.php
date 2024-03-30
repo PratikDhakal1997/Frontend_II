@@ -201,27 +201,24 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 <body>
     <header class="header">
         <nav class="header__nav">
-            <a class="header__brand" href="./index.html">
+            <a class="header__brand" href="./index.php">
                 <img src="../img/savoria-logo.svg" alt="Logo" />
             </a>
             <ul class="header__list">
-                <li class="header__list-item active">
-                    <a href="./index.html">Home</a>
+                <li class="header__list-item">
+                    <a href="../index.php">Home</a>
                 </li>
                 <li class="header__list-item">
-                    <a href="./html/about.html">About</a>
+                    <a href="../html/about.html">About</a>
                 </li>
                 <li class="header__list-item">
-                    <a href="./html/contact.html">Contact</a>
-                </li>
-                <li class="header__list-item">
-                    <a class="header__list-item__cart" href="./html/cart/index.html">Cart <span class="header__list-item__cart-count">7</span></a>
+                    <a href="../html/contact.html">Contact</a>
                 </li>
                 <?php
                 if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 
                 ?>
-                    <li class="header__list-item">
+                    <li class="header__list-item active">
                         <a href="<?php echo $profileLink; ?>">view profile</a>
                     </li>
                 <?php
@@ -292,7 +289,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
     <footer class="footer">
         <div class="footer__items">
             <div class="footer__item">
-                <img class="footer__item-brand" src="./img/savoria-logo-white.svg" alt="Logo" />
+                <img class="footer__item-brand" src="../img/savoria-logo-white.svg" alt="Logo" />
             </div>
             <div class="footer__item">
                 <h3 class="footer__item-title">Contact</h3>

@@ -1,5 +1,4 @@
 <?php
-
 // session_start();
 $servername = "localhost";
 $username = "web";
@@ -39,7 +38,6 @@ if ($result->num_rows > 0) {
         $details['postal_code'] = $data['postal_code'];
         $details['dob'] = $data['dob'];
         $details['gender'] = $data['gender'];
-        // Modify the echo statement according to your table columns
     }
 } else {
     echo "0 results";
