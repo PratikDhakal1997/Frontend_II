@@ -1,5 +1,5 @@
 <?php
-// session_start();
+session_start();
 $servername = "localhost";
 $username = "web";
 $password = "web";
@@ -12,6 +12,8 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
+// var_dump($_SESSION['email']);
+
 $sql = "SELECT * FROM USERS WHERE  email = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("s", $_SESSION['email']);
@@ -22,7 +24,7 @@ $stmt->execute();
 // Get result
 $result = $stmt->get_result();
 
-// var_dump($_SESSION(''))
+
 
 // Check if any rows were returned
 $details = array();

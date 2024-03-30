@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include 'get_user.php';
 if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
     // Set the link URL and text based on the session variable
@@ -219,7 +219,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 
                 ?>
                     <li class="header__list-item">
-                        <a href="<?php echo $profileLink; ?>">view profile</a>
+                        <a href="#">view profile</a>
                     </li>
                 <?php
                 }
