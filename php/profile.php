@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include 'get_user.php';
 if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
     // Set the link URL and text based on the session variable
@@ -201,25 +201,25 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 <body>
     <header class="header">
         <nav class="header__nav">
-            <a class="header__brand" href="./index.php">
+            <a class="header__brand" href="../index.php">
                 <img src="../img/savoria-logo.svg" alt="Logo" />
             </a>
             <ul class="header__list">
-                <li class="header__list-item active">
-                    <a href="./index.php">Home</a>
+                <li class="header__list-item">
+                    <a href="../index.php">Home</a>
                 </li>
                 <li class="header__list-item">
-                    <a href="./html/about.html">About</a>
+                    <a href="../html/about.html">About</a>
                 </li>
                 <li class="header__list-item">
-                    <a href="./html/contact.html">Contact</a>
+                    <a href="../html/contact.html">Contact</a>
                 </li>
                 <?php
                 if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 
                 ?>
-                    <li class="header__list-item">
-                        <a href="<?php echo $profileLink; ?>">view profile</a>
+                    <li class="header__list-item active">
+                        <a href="#">view profile</a>
                     </li>
                 <?php
                 }
@@ -269,7 +269,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                 <div id="lastnameMessage"></div> <br>
 
                 <label for="phone">Phone:</label><br>
-                <input type="number" id="phone" name="phone" value="<?php echo $details['phone'] ?>" required><br>
+                <input type="text" id="phone" name="phone" value="<?php echo $details['phone'] ?>" title="Must be 10 digits" pattern="[1-9]{1}[0-9]{9}" minlength="10" required><br>
                 <div id="phoneMessage"></div> <br>
                 <label for="address">Address:</label><br>
                 <input type="text" id="address" name="address" value="<?php echo $details['address'] ?>" required><br>
@@ -289,7 +289,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
     <footer class="footer">
         <div class="footer__items">
             <div class="footer__item">
-                <img class="footer__item-brand" src="./img/savoria-logo-white.svg" alt="Logo" />
+                <img class="footer__item-brand" src="../img/savoria-logo-white.svg" alt="Logo" />
             </div>
             <div class="footer__item">
                 <h3 class="footer__item-title">Contact</h3>
@@ -376,22 +376,31 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                 // Initialize jQuery validation
                 $(this).validate({
                     rules: {
-                        email: {
+                        firstname: {
                             required: true,
-                            email: true // Ensure the input is a valid email address
                         },
-                        mySelect: {
+                        lastname: {
                             required: true // Ensure a selection is made
+                        },
+
+                        phone: {
+                            required: true,
+                            minlength: 10
                         }
+
                     },
                     messages: {
-                        email: {
-                            required: "Please enter an email address",
-                            email: "Please enter a valid email address"
+                        firstname: {
+                            required: "Please enter your firstname",
                         },
-                        mySelect: {
+                        lastname: {
                             required: "Please select your gender"
+                        },
+                        phone: {
+                            required: "Please enter a phone number.",
+                            minlength: "Please enter at least 10 digits."
                         }
+
                     },
                     errorPlacement: function(error, element) {
                         // Custom placement for error messages
@@ -405,6 +414,9 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                     }
                 });
 
+
+
+
                 // Prevent form submission if validation fails
                 if (!$(this).valid() || !check()) {
                     e.preventDefault();
@@ -413,6 +425,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                 // Prevent form submission if HTML5 validation fails
                 e.preventDefault();
             }
+
         });
 
 
