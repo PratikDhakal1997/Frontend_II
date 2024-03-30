@@ -177,18 +177,36 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='%23212121'%3E%3Cpath d='M7 10l5 5 5-5H7z'/%3E%3C/svg%3E") no-repeat 95% 50%;
             background-size: 12px;
         }
+
+        /* Logout button */
+        #logoutbtn {
+            background-color: #dc3545;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+            /* Added margin top for spacing */
+        }
+
+        #logoutbtn:hover {
+            background-color: #c82333;
+        }
     </style>
 </head>
 
 <body>
     <header class="header">
         <nav class="header__nav">
-            <a class="header__brand" href="./index.html">
+            <a class="header__brand" href="./index.php">
                 <img src="../img/savoria-logo.svg" alt="Logo" />
             </a>
             <ul class="header__list">
                 <li class="header__list-item active">
-                    <a href="./index.html">Home</a>
+                    <a href="./index.php">Home</a>
                 </li>
                 <li class="header__list-item">
                     <a href="./html/about.html">About</a>
@@ -197,7 +215,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                     <a href="./html/contact.html">Contact</a>
                 </li>
                 <li class="header__list-item">
-                    <a class="header__list-item__cart" href="./html/cart/index.html">Cart <span class="header__list-item__cart-count">7</span></a>
+                    <a class="header__list-item__cart" href="./html/cart/index.php">Cart <span class="header__list-item__cart-count">7</span></a>
                 </li>
                 <?php
                 if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
@@ -229,14 +247,16 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                     <div class="profile-picture">
                         <img src="../img/profile.png" class="profile-picture" alt="Profile Picture">
                     </div>
-                    <h2 class="name"><?php echo $details['first_name'] ?> <?php echo $details['last_name'] ?></h2>
-                    <h3 class="username"> email: <?php echo $details['email']  ?> </h3>
-                    <h3 class="username">phone: <?php echo $details['phone'] ?></h3>
-                    <h3 class="username">address: <?php echo $details['address'] ?></h3>
-                    <h3 class="username">postal_code: <?php echo $details['postal_code'] ?></h3>
-                    <h3 class="username">dob: <?php echo $details['dob'] ?></h3>
-                    <h3 class="username">gender: <?php echo $details['gender'] ?></h3>
+                    <p class="name"><?php echo $details['first_name'] ?> <?php echo $details['last_name'] ?></p>
+                    <p class="username"> email: <?php echo $details['email']  ?> </p>
+                    <p class="username">phone: <?php echo $details['phone'] ?></p>
+                    <p class="username">address: <?php echo $details['address'] ?></p>
+                    <p class="username">postal_code: <?php echo $details['postal_code'] ?></p>
+                    <p class="username">dob: <?php echo $details['dob'] ?></p>
+                    <p class="username">gender: <?php echo $details['gender'] ?></p>
                     <button id="editbtn" class="btn">Edit</button>
+                    <a id="logoutbtn" href="logout.php" class="btno">Logout</a> <!-- Logout button added here -->
+
                 </div>
             </div>
         </section>
@@ -244,63 +264,20 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
         <div id="editForm">
             <form action="edit_profile.php" id="edit_profile" method="post">
                 <input type="hidden" id="artid">
-                <label for="firstname">firstname:</label><br>
+                <label for="firstname">Firstname:</label><br>
                 <input type="text" id="firstname" name="firstname" value="<?php echo $details['first_name'] ?>" required><br>
                 <div id="firstnameMessage"></div> <br>
-                <label for=" lastname">lastname:</label><br>
+                <label for=" lastname">Lastname:</label><br>
                 <input type="text" id="lastname" name="lastname" value="<?php echo $details['last_name'] ?> " required><br>
                 <div id="lastnameMessage"></div> <br>
-                <label for=" password">password:</label><br>
-                <input type="password" id="password" name="password" value="<?php echo $details['password'] ?>" onkeyup="passwordCheck()" required><br>
-                <div id="passwordMessage"></div> <br>
 
-                <label for="email">email:</label><br>
-                <input type="text" id="Email" name="email" value="<?php echo $details['email'] ?>" onkeyup='emailCheck();' required><br>
-                <div id="emailMessgage"></div> <br>
-                <label for="phone">phone:</label><br>
+                <label for="phone">Phone:</label><br>
                 <input type="number" id="phone" name="phone" value="<?php echo $details['phone'] ?>" required><br>
                 <div id="phoneMessage"></div> <br>
-                <label for="address">address:</label><br>
+                <label for="address">Address:</label><br>
                 <input type="text" id="address" name="address" value="<?php echo $details['address'] ?>" required><br>
                 <div id="addressMessage"></div> <br>
-                <label for="postalcode">postalcode:</label><br>
-                <input type="text" id="postalcode" name="postalcode" value="<?php echo $details['postal_code'] ?>" required><br>
-                <div id="postalcodeMessage"></div> <br>
-                <label for="dob">dob:</label><br>
-                <input type="text" id="datepicker" name="dob" value="<?php echo $details['dob'] ?>" required><br>
-                <div id="datePickerMessage"></div> <br>
 
-
-                <label for="gender">gender:</label><br>
-
-                <div class="input-field input-dropdown">
-
-                    <select name="mySelect" id="mySelect">
-
-                        <option value="<?php echo $details['gender'] ?>"> <?php echo strtoupper($details['gender']) ?> </option>
-
-                        <?php
-                        if ($details['gender'] != 'male') {
-
-                        ?>
-                            <option value="male">MALE</option>
-
-                        <?php
-                        }
-                        ?>
-
-                        <?php
-                        if ($details['gender'] != 'female') {
-
-                        ?>
-                            <option value="female">FEMALE</option>
-
-                        <?php
-                        }
-                        ?>
-                        <option value="other">Prefer Not to say</option>
-                    </select>
-                </div>
                 <input id="savebtn" type="submit" class="btn">
             </form>
         </div>
