@@ -71,16 +71,30 @@ sign_in_btn.addEventListener("click", () => {
 
 // Function to check if passwords match
 var check = function() {
-    if (document.getElementById('password').value ==
+    password = document.getElementById('password').value;
+        if(password.length>=8){
+        document.getElementById('password_msg').innerHTML = '';
+        if (document.getElementById('password').value ==
         document.getElementById('confirm_password').value) {
         document.getElementById('message').style.color = 'green';
         document.getElementById('message').innerHTML = '✔';
         return true;
     } else {
-        document.getElementById('message').style.color = 'red';
-        document.getElementById('message').innerHTML = '✗';
+        if(!document.getElementById('confirm_password').value ==""){
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = '✗';
+            return false;
+        }
         return false;
     }
+    }
+    else{
+        document.getElementById('message').innerHTML = '';
+        document.getElementById('password_msg').style.color = 'red';
+        document.getElementById('password_msg').innerHTML = 'Must be 8 character long';
+        return false;
+    }
+    
 };
 
 // Function to validate email format
