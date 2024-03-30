@@ -74,7 +74,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
         <p class="hero__info-text">
           Savour the Flavors, Order with Savouir - Your Ultimate Online Food Destination
         </p>
-        <a class="hero__info-button" href="./html/products/index.php">Shop now</a>
+        <a class="hero__info-button" href="./html/products/index.html">Shop now</a>
       </div>
     </div>
   </section>
@@ -90,7 +90,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             flavorful dishes like empanadas, cazuela (stew), and pastel de
             choclo (corn pie).
           </p>
-          <a class="categories__item-button" href="./html/products/index.php">View category</a>
+          <a class="categories__item-button" href="./html/products/index.html">View category</a>
         </article>
         <!-- close .categories__item -->
         <article class="categories__item" style="background-image: url('./img/category-chinesse-food.jpg')">
@@ -100,7 +100,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             offers delectable dishes like dim sum, stir-fries, and Peking
             duck.
           </p>
-          <a class="categories__item-button" href="./html/products/index.php">View category</a>
+          <a class="categories__item-button" href="./html/products/index.html">View category</a>
         </article>
         <!-- close .categories__item -->
         <article class="categories__item" style="background-image: url('./img/category-greek-food.jpg')">
@@ -110,7 +110,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             and iconic dishes like souvlaki, moussaka, and spanakopita
             (spinach pie).
           </p>
-          <a class="categories__item-button" href="./html/products/index.php">View category</a>
+          <a class="categories__item-button" href="./html/products/index.html">View category</a>
         </article>
         <!-- close .categories__item -->
         <article class="categories__item" style="background-image: url('./img/category-indian-food.jpg')">
@@ -120,7 +120,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             tantalizing dishes like curry, biryani, and samosas, which cater
             to diverse tastes.
           </p>
-          <a class="categories__item-button" href="./html/products/index.php">View category</a>
+          <a class="categories__item-button" href="./html/products/index.html">View category</a>
         </article>
         <!-- close .categories__item -->
         <article class="categories__item" style="background-image: url('./img/category-italian-food.jpg')">
@@ -130,7 +130,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             Italian cuisine includes classics like pizza, pasta, and risotto,
             loved worldwide.
           </p>
-          <a class="categories__item-button" href="./html/products/index.php">View category</a>
+          <a class="categories__item-button" href="./html/products/index.html">View category</a>
         </article>
         <!-- close .categories__item -->
         <article class="categories__item" style="background-image: url('./img/category-mexican-food.jpg')">
@@ -140,7 +140,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             tacos, enchiladas, and guacamole, celebrating the perfect balance
             of flavors.
           </p>
-          <a class="categories__item-button" href="./html/products/index.php">View category</a>
+          <a class="categories__item-button" href="./html/products/index.html">View category</a>
         </article>
         <!-- close .categories__item -->
         <article class="categories__item" style="background-image: url('./img/category-peruvian-food.jpg')">
@@ -150,7 +150,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             cuisine offers ceviche, lomo saltado (beef stir-fry), and causa
             (potato dish).
           </p>
-          <a class="categories__item-button" href="./html/products/index.php">View category</a>
+          <a class="categories__item-button" href="./html/products/index.html">View category</a>
         </article>
         <!-- close .categories__item -->
         <article class="categories__item" style="background-image: url('./img/category-soft-drinks.jpg')">
@@ -160,7 +160,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             like cola, lemon-lime soda, and root beer, perfect for any
             occasion.
           </p>
-          <a class="categories__item-button" href="./html/products/index.php">View category</a>
+          <a class="categories__item-button" href="./html/products/index.html">View category</a>
         </article>
         <!-- close .categories__item -->
         <article class="categories__item" style="background-image: url('./img/category-desserts.jpg')">
@@ -170,7 +170,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
             chocolate cake, creamy cheesecake, and fruit-filled pies,
             satisfying your sweet tooth.
           </p>
-          <a class="categories__item-button" href="./html/products/index.php">View category</a>
+          <a class="categories__item-button" href="./html/products/index.html">View category</a>
         </article>
         <!-- close .categories__item -->
       </div>
