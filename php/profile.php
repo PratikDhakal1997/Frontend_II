@@ -1,5 +1,5 @@
 <?php
-session_start();
+// session_start();
 include 'get_user.php';
 if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
     // Set the link URL and text based on the session variable
@@ -201,7 +201,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 <body>
     <header class="header">
         <nav class="header__nav">
-            <a class="header__brand" href="./index.php">
+            <a class="header__brand" href="../index.php">
                 <img src="../img/savoria-logo.svg" alt="Logo" />
             </a>
             <ul class="header__list">
@@ -219,7 +219,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 
                 ?>
                     <li class="header__list-item active">
-                        <a href="<?php echo $profileLink; ?>">view profile</a>
+                        <a href="#">view profile</a>
                     </li>
                 <?php
                 }
