@@ -105,6 +105,13 @@ table tr th, table tr td {
   max-width: 100%;
 }
 
+/* Styles for slider images */
+.img-responsive {
+  display: block;
+  
+  max-width: 100%;
+}
+
 /* Styles for buttons */
 .button {
   background-color: #E23F58;
@@ -472,6 +479,7 @@ table tr th, table tr td {
 }
 
 /* Styling for about section content */
+
 .about__content {
   margin: 2rem 0;
   display: grid;

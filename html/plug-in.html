@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Savoria - Your food tent</title>
+    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="../css/main.css">
+    <!-- Include jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Include jQuery UI library -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script src="../ResponsiveSlides.js-master/responsiveslides.min.js"></script>
+    
+  
+    <style>
+    .accordion-content {
+        background-color: #E23F58;
+        padding: 15px;
+    }
+    </style>
+</head>
+<body>
+<header class="header">
+    <nav class="header__nav">
+        <a class="header__brand" href="../index.html">
+            <img src="../img/savoria-logo.svg" alt="Logo" />
+        </a>
+        <ul class="header__list">
+            <li class="header__list-item"><a href="../index.html">Home</a></li>
+            <li class="header__list-item active">
+                <a href="./about.html">About</a>
+            </li>
+            <li class="header__list-item">
+                <a href="./contact.html">Contact</a>
+            </li>
+            <li class="header__list-item">
+                <a class="header__list-item__cart" href="./cart/index.html">Cart <span class="header__list-item__cart-count">7</span></a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+    <section class="container about">
+        <h2 class="title"><span>About us</span></h2>
+        <img class="img-responsive" src="../img/about-main.jpg" alt="About us"/>
+        <div class="about__content">
+            <div class="about__content-item">
+                <h4 class="subtitle">We owe our success to our incredible team</h4>
+                <p>
+                    At Savoria, we are passionate about creating exceptional experiences and delivering high-quality products to our valued customers.
+                </p>
+                <p>
+                    Established with a vision to make a positive impact in the lives of people, we take pride in our commitment to excellence and innovation. Our journey began with a simple idea, and over the years, it has evolved into a thriving company driven by a team of dedicated professionals.
+                </p>
+                <p>
+                    We strive to go above and beyond to meet and exceed our customers' expectations. Every product we offer is carefully crafted with meticulous attention to detail, ensuring that it not only meets industry standards but also brings joy and satisfaction to our customers. Our mission is to provide solutions that enrich your everyday life, whether it's through our innovative gadgets, sustainable products, or personalized services.
+                </p>
+                <p>
+                    Transparency, integrity, and sustainability are the cornerstones of our business philosophy. We believe in forging strong relationships with our customers, partners, and communities we operate in, fostering an environment of trust and mutual respect. As a socially responsible company.
+                </p>
+            </div>
+            
+            <!-- Slideshow 3 -->
+            <ul class="rslides" id="slider3" class="about__content-item">
+                <li><img class="img-responsive1" src="../img/test/1.jpeg" alt="" height="530" width="560"></li>
+                <li><img class="img-responsive1" src="../img/test/2.jpg" alt="" height="530" width="560"></li>
+                <li><img class="img-responsive1" src="../img/test/3.jpg" alt="" height="530" width="560"></li>
+                <li><img class="img-responsive1" src="../img/test/4.jpeg" alt="" height="530" width="560"></li>
+            </ul>
+        </div>
+        <div class="accordion">
+            <h3 class="accordion-header">Our values</h3>
+            <div class="accordion-content">
+                <p>
+                    Welcome to Savoria, where our values are at the heart of every culinary creation. With a commitment to excellence, innovation, and sustainability, we craft unforgettable dining experiences that celebrate the finest ingredients, embrace diverse flavors, and honor our planet. Join us in a journey of culinary artistry that reflects our passion for food, people, and the world we share.
+                </p>
+            </div>
+            <h3 class="accordion-header">Our goals</h3>
+            <div class="accordion-content">
+                <p>
+                    At Savoria, our goals are driven by a relentless pursuit of culinary excellence and customer satisfaction. We aim to consistently delight our guests with exceptional dishes, impeccable service, and an inviting atmosphere. We strive to foster a vibrant and inclusive community where food lovers can gather, connect, and create lasting memories.
+                </p>
+            </div>
+            <h3 class="accordion-header">Our history</h3>
+            <div class="accordion-content">
+                <p>
+                    Steeped in a legacy of passion and flavor, Savoria has a rich history that spans generations. What began as a humble family endeavor blossomed into a renowned culinary destination known for its artful fusion of tradition and innovation. Our journey has been one of unwavering commitment to crafting exceptional cuisine, guided by time-honored recipes while embracing modern techniques.
+                </p>
+            </div>
+        </div>
+    </section>
+    
+</main>
+<footer class="footer">
+    <div class="footer__items">
+        <div class="footer__item">
+            <img class="footer__item-brand" src="../img/savoria-logo-white.svg" alt="Logo"/>
+        </div>
+        <div class="footer__item">
+            <h3 class="footer__item-title">Contact</h3>
+            <ul class="footer__item-list">
+                <li>
+                    <address>265 Yorkland Blvd #400, North York, ON M2J 1S5</address>
+                </li>
+                <li><a href="mailto:contact@savoria.ca">contact@savoria.ca</a></li>
+                <li><a href="tel:+14164852098">+1 (416) 485-2098</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer__copyright">
+        <p>Savoria&copy; 2023, all rights reserved</p>
+    </div>
+</footer>
+<script>
+    $(document).ready(function(){
+        $(".accordion").accordion({
+            collapsible: true,
+            active: false,
+            heightStyle: "content"
+        });
+    });
+
+    // Slideshow 3
+    $("#slider3").responsiveSlides({
+        manualControls: '#slider3-pager',
+        maxwidth: 540
+      });
+</script>
+</body>
+</html>
