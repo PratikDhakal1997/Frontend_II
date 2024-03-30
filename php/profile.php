@@ -3,7 +3,7 @@
 include 'get_user.php';
 if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
     // Set the link URL and text based on the session variable
-    $linkUrl = "index.php"; // Example link
+    $linkUrl = "#"; // Example link
     $linkText = "Welcome, " . htmlspecialchars($_SESSION["username"]);
     $profileLink = "php/profile.php";
 } else {
