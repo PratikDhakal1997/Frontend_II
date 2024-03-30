@@ -99,7 +99,7 @@ var check = function() {
 
 // Function to validate email format
 var emailCheck = function() {
-    var email = document.getElementById('Email').value;
+    var email = $('#Email').val();
     var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; // Regex for email validation
     
     if (regex.test(email)) {
@@ -114,7 +114,7 @@ var emailCheck = function() {
 
 // Function to validate password length
 var passwordCheck = function() {
-    var password = document.getElementById('pswd').value;
+    var password = $('#pswd').val();
     var regex = /^.{8,}$/; // Regex for minimum 8 characters
 
     if (regex.test(password)) {
