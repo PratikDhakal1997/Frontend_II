@@ -201,7 +201,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 <body>
     <header class="header">
         <nav class="header__nav">
-            <a class="header__brand" href="./index.php">
+            <a class="header__brand" href="../index.php">
                 <img src="../img/savoria-logo.svg" alt="Logo" />
             </a>
             <ul class="header__list">
