@@ -205,7 +205,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                 <img src="../img/savoria-logo.svg" alt="Logo" />
             </a>
             <ul class="header__list">
-                <li class="header__list-item active">
+                <li class="header__list-item">
                     <a href="../index.php">Home</a>
                 </li>
                 <li class="header__list-item">
@@ -218,7 +218,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
                 if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 
                 ?>
-                    <li class="header__list-item">
+                    <li class="header__list-item active">
                         <a href="<?php echo $profileLink; ?>">view profile</a>
                     </li>
                 <?php
