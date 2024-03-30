@@ -2,8 +2,8 @@
 session_start();
 // Database connection parameters
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "web";
+$password = "web";
 $dbname = "example_db";
 
 // Create connection
