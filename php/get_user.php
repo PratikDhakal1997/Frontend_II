@@ -12,7 +12,7 @@ if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-// var_dump($_SESSION['email']);
+var_dump($_SESSION['email']);
 
 $sql = "SELECT * FROM USERS WHERE  email = ?";
 $stmt = $conn->prepare($sql);
