@@ -77,7 +77,7 @@
                 <input id="name" type="text" name="name" placeholder="Name" required />
               </div>
               <div class="contact__form__inputs__input">
-                <input id="lastname" type="text" name="lastname" placeholder="Lastname" required />
+                <input id="lastname" type="text" name="lastname" placeholder="Last name" required />
               </div>
             </div>
             <div class="contact__form__inputs">
@@ -149,6 +149,15 @@
         modal: true,
         autoOpen: false,
         show: { effect: "blind", duration: 800 },
+        buttons: [
+          {
+            text: "Ok",
+            icon: "ui-icon-heart",
+            click: function() {
+              $( this ).dialog( "close" );
+            }
+          }
+        ]
       });
     });
 
