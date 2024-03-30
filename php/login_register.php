@@ -9,8 +9,10 @@ if (isset($_SESSION['page_load_count'])) {
 
     // If reloaded, clear and destroy the session
     if ($_SESSION['page_load_count'] > 1) {
-        session_unset();
-        session_destroy();
+        if(!(isset($_SESSION["login"]) && $_SESSION["login"] == "true")){
+            session_unset();
+            session_destroy();
+        }
     }
 } else {
     // Initialize page load count
@@ -31,6 +33,8 @@ if (isset($_SESSION['page_load_count'])) {
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
     <script src="https://kit.fontawesome.com/64d58efce2.js" crossorigin="anonymous"></script>
 	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- link for theme -->
+    <link rel="stylesheet" href="../lib/jquery-ui.min.css">
 </head>
 
 <body>
@@ -53,7 +57,7 @@ if (isset($_SESSION['page_load_count'])) {
                     ?>
                     <div class="input-field">
                         <i class="fas fa-lock"></i>
-                        <input type="password" id="pswd" name="Password" placeholder="Password" onkeyup='passwordCheck();' required>
+                        <input type="password" id="pswd" name="Password" placeholder="Password"  onkeyup='passwordCheck();' required>
                     </div>
                     <div id="passwordMessgage"></div>
                     <?php
@@ -87,10 +91,11 @@ if (isset($_SESSION['page_load_count'])) {
                         <div id="phone_error"></div>        
                     </div>
                     <div class="span-pos input-field name-fields">              
-                        <input name="password" id="password" type="password" placeholder="password" required />                 
+                        <input name="password" id="password" type="password"  placeholder="password"  required onkeyup='check();'  />                 
                         <input type="password" id="confirm_password" name="confirm_password" placeholder="confirm-password" required onkeyup='check();' /> 
                         <span class="error_msg" id="message"></span>
                     </div>
+                    <div id="password_msg"></div>
 
                     <div class="input-field name-fields">     
                         <input type="text" id="address" name="address" placeholder="Address" required />

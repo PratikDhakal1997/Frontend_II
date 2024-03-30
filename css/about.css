@@ -1,0 +1,22 @@
+/* Additional styles for accordion */
+.accordion-header {
+    background-color: #f4f4f4;
+    color: #333;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 100%;
+    text-align: left;
+    transition: background-color 0.3s ease;
+}
+.accordion-header:hover {
+    background-color: #ddd;
+}
+.accordion-content {
+    display: none;
+    padding: 15px;
+}
+.active .accordion-content {
+    display: block;
+}
