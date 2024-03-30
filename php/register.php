@@ -49,7 +49,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $_SESSION['username'] = $row['first_name'];
       $_SESSION['email'] = $row['email'];
 
-      
+
       header('Location: ../index.php');
     }
   } else {
