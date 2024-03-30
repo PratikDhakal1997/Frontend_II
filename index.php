@@ -40,9 +40,6 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
         <li class="header__list-item">
           <a href="./html/contact.html">Contact</a>
         </li>
-        <li class="header__list-item">
-          <a class="header__list-item__cart" href="./html/cart/index.php">Cart <span class="header__list-item__cart-count">7</span></a>
-        </li>
         <?php
         if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 
