@@ -71,21 +71,35 @@ sign_in_btn.addEventListener("click", () => {
 
 // Function to check if passwords match
 var check = function() {
-    if (document.getElementById('password').value ==
+    password = document.getElementById('password').value;
+        if(password.length>=8){
+        document.getElementById('password_msg').innerHTML = '';
+        if (document.getElementById('password').value ==
         document.getElementById('confirm_password').value) {
         document.getElementById('message').style.color = 'green';
         document.getElementById('message').innerHTML = '✔';
         return true;
     } else {
-        document.getElementById('message').style.color = 'red';
-        document.getElementById('message').innerHTML = '✗';
+        if(!document.getElementById('confirm_password').value ==""){
+            document.getElementById('message').style.color = 'red';
+            document.getElementById('message').innerHTML = '✗';
+            return false;
+        }
         return false;
     }
+    }
+    else{
+        document.getElementById('message').innerHTML = '';
+        document.getElementById('password_msg').style.color = 'red';
+        document.getElementById('password_msg').innerHTML = 'Must be 8 character long';
+        return false;
+    }
+    
 };
 
 // Function to validate email format
 var emailCheck = function() {
-    var email = document.getElementById('Email').value;
+    var email = $('#Email').val();
     var regex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/; // Regex for email validation
     
     if (regex.test(email)) {
@@ -100,7 +114,7 @@ var emailCheck = function() {
 
 // Function to validate password length
 var passwordCheck = function() {
-    var password = document.getElementById('pswd').value;
+    var password = $('#pswd').val();
     var regex = /^.{8,}$/; // Regex for minimum 8 characters
 
     if (regex.test(password)) {
