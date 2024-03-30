@@ -241,7 +241,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
         <section class="hero">
             <div class="container-profile">
                 <div class="card">
-                    <div class="profile-picture">
+                    <div class="">
                         <img src="../img/profile.png" class="profile-picture" alt="Profile Picture">
                     </div>
                     <p class="name"><?php echo $details['first_name'] ?> <?php echo $details['last_name'] ?></p>
