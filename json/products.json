@@ -1,0 +1,46 @@
+{
+    "products": [
+      {
+        "name": "Baked empanadas",
+        "price": "$40",
+        "packaging": "6 units per box",
+        "imgSrc": "product-chilean-empanadas.jpg"
+    },
+    {
+        "name": "Chilean corn pie",
+        "price": "$70.00",
+        "packaging": "2 units per box",
+        "imgSrc": "product-chilean-corn-pie.jpg"
+      },
+      {
+        "name": "Chilean pebre",
+        "price": "$40.00",
+        "packaging": "750 grs",
+        "imgSrc": "product-chilean-pebre.jpg"
+
+      },
+      {
+        "name": "Paila marina",
+        "price": "$60.00",
+        "packaging": "750 grs",
+        "imgSrc": "product-chilean-paila-marina.jpg"
+
+      },
+      {
+        "name": "Humitas",
+        "price": "$30.00",
+        "packaging": "4 units per box",
+        "imgSrc": "product-chilean-humitas.jpg"
+
+      },
+      {
+        "name": "Caldillo de congrio",
+        "price": "$90.00",
+        "packaging": "900 grs",
+        "imgSrc": "product-chilean-caldillo.jpg"
+
+      }
+
+    ]
+  }
+  
