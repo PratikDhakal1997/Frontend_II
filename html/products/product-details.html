@@ -155,7 +155,6 @@
           const currentQuantity = parseInt(quantityInput.value);
           if (currentQuantity > 1) {
               quantityInput.value = currentQuantity - 1;
-              updateAvailableProducts(-1);
           }
       }
 
@@ -165,14 +164,7 @@
           const currentQuantity = parseInt(quantityInput.value);
           if (currentQuantity < 100) {
               quantityInput.value = currentQuantity + 1;
-              updateAvailableProducts(1);
           }
-      }
-
-      // Function to update available product count
-      function updateAvailableProducts(change) {
-          availableProducts += change;
-          document.getElementById('available-products').textContent = availableProducts;
       }
 
       // Function to handle "Add to cart" button click
@@ -183,9 +175,19 @@
               // Perform cart-related actions (e.g., add to cart logic)
               alert(`Added ${selectedQuantity} item(s) to cart.`);
               updateAvailableProducts(-selectedQuantity);
+              // Reset quantity input to 1
+              quantityInput.value = 1;
           } else {
               alert('Invalid quantity or not enough available products.');
+              // Reset quantity input to 1
+              quantityInput.value = 1;
           }
+      }
+
+      // Function to update available product count
+      function updateAvailableProducts(change) {
+          availableProducts += change;
+          document.getElementById('available-products').textContent = availableProducts;
       }
   </script>
   </body>
