@@ -241,7 +241,7 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
         <section class="hero">
             <div class="container-profile">
                 <div class="card">
-                    <div class="">
+                    <div>
                         <img src="../img/profile.png" class="profile-picture" alt="Profile Picture">
                     </div>
                     <p class="name"><?php echo $details['first_name'] ?> <?php echo $details['last_name'] ?></p>
@@ -315,27 +315,38 @@ if (isset($_SESSION["username"]) && !empty($_SESSION["username"])) {
 
 
         $('.card').mouseenter(function() {
-
+            var originalWidth = $(this).css('width');
+            var originalHeight = $(this).css('height');
+            var originalMarginLeft = $(this).css('marginLeft');
+            var originalMarginTop = $(this).css('marginTop');
 
             $(this).animate({
-                // Define the CSS properties you want to animate
-                width: '700px', // Expand the width
-                height: '600px', // Expand the height
-                marginLeft: '50px', // Move the card to the right
-                marginTop: '50px' // Move the card down
+                width: '600px', // Expand the width to half
+                height: '500px', // Expand the height to half
+                marginLeft: '-=50px', // Center the card horizontally
+                marginTop: '-=50px' // Center the card vertically
             }, 500); // Animation duration in milliseconds
+
+            $(this).data('originalWidth', originalWidth);
+            $(this).data('originalHeight', originalHeight);
+            $(this).data('originalMarginLeft', originalMarginLeft);
+            $(this).data('originalMarginTop', originalMarginTop);
         });
 
         $('.card').mouseleave(function() {
-            $(this).animate({
-                // Define the CSS properties you want to animate
-                width: '500px', // Expand the width
-                height: '400px', // Expand the height
-                marginLeft: '50px', // Move the card to the right
-                marginTop: '50px' // Move the card down
-            }, 500); // Animation duration in milliseconds
+            var originalWidth = $(this).data('originalWidth');
+            var originalHeight = $(this).data('originalHeight');
+            var originalMarginLeft = $(this).data('originalMarginLeft');
+            var originalMarginTop = $(this).data('originalMarginTop');
 
+            $(this).animate({
+                width: originalWidth, // Shrink the width back to original
+                height: originalHeight, // Shrink the height back to original
+                marginLeft: originalMarginLeft, // Reset the marginLeft
+                marginTop: originalMarginTop // Reset the marginTop
+            }, 500); // Animation duration in milliseconds
         });
+
         $("#datepicker").datepicker({
             dateFormat: "yy-mm-dd", // Set date format to YYYY-MM-DD
             changeYear: true, // Enable changing the year
