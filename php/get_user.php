@@ -23,7 +23,6 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 
-
 // Check if any rows were returned
 $details = array();
 if ($result->num_rows > 0) {

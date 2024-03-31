@@ -161,8 +161,11 @@
           {
             text: "Ok",
             icon: "ui-icon-heart",
-            click: function () {
-              $(this).dialog("close");
+
+            click: function() {
+              $( this ).dialog( "close" );
+              // Reload the page
+              window.location.reload();
             }
           }
         ]
