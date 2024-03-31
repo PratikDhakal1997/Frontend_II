@@ -60,31 +60,18 @@
             </div>
             <div class="product__info-price">
               <p class="availability">
-                <span class="available">In stock</span>
+                  <span class="available">In stock (<span id="available-products">47</span> available)</span>
               </p>
               <p class="amount">$40.00</p>
-            </div>
-            <form
-              class="product__info-form"
-              action="./product-details.html"
-              method="post"
-            >
-              <input class="button minus" type="button" value="-" />
-              <input
-                type="number"
-                step="1"
-                min="1"
-                max="100"
-                name="quantity"
-                value="1"
-                title="Quantity"
-                size="4"
-                pattern="[0-9]*"
-                inputmode="numeric"
-              />
-              <input class="button plus" type="button" value="+" />
-              <button class="button" type="submit">Add to cart</button>
-            </form>
+          </div>
+      
+          <form class="product__info-form" action="./product-details.html" method="post">
+              <input class="button minus" type="button" value="-" onclick="decreaseQuantity()" />
+              <input type="number" step="1" min="1" max="100" name="quantity" value="1" title="Quantity" size="4" pattern="[0-9]*" inputmode="numeric" />
+              <input class="button plus" type="button" value="+" onclick="increaseQuantity()" />
+              <button class="button" type="button" onclick="addToCart()">Add to cart</button>
+          </form>
+
           </div>
           <div class="product__gallery">
             <img
@@ -158,5 +145,48 @@
         <p>Savoria&copy; 2023, all rights reserved</p>
       </div>
     </footer>
+    <script>
+      // Initialize available product count
+      let availableProducts = 47;
+
+      // Function to decrease quantity
+      function decreaseQuantity() {
+          const quantityInput = document.querySelector('input[name="quantity"]');
+          const currentQuantity = parseInt(quantityInput.value);
+          if (currentQuantity > 1) {
+              quantityInput.value = currentQuantity - 1;
+              updateAvailableProducts(-1);
+          }
+      }
+
+      // Function to increase quantity
+      function increaseQuantity() {
+          const quantityInput = document.querySelector('input[name="quantity"]');
+          const currentQuantity = parseInt(quantityInput.value);
+          if (currentQuantity < 100) {
+              quantityInput.value = currentQuantity + 1;
+              updateAvailableProducts(1);
+          }
+      }
+
+      // Function to update available product count
+      function updateAvailableProducts(change) {
+          availableProducts += change;
+          document.getElementById('available-products').textContent = availableProducts;
+      }
+
+      // Function to handle "Add to cart" button click
+      function addToCart() {
+          const quantityInput = document.querySelector('input[name="quantity"]');
+          const selectedQuantity = parseInt(quantityInput.value);
+          if (selectedQuantity > 0 && selectedQuantity <= availableProducts) {
+              // Perform cart-related actions (e.g., add to cart logic)
+              alert(`Added ${selectedQuantity} item(s) to cart.`);
+              updateAvailableProducts(-selectedQuantity);
+          } else {
+              alert('Invalid quantity or not enough available products.');
+          }
+      }
+  </script>
   </body>
 </html>
