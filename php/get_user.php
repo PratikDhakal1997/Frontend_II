@@ -1,9 +1,8 @@
 <?php
-
-// session_start();
+session_start();
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "web";
+$password = "web";
 $dbname = "example_db";
 // Create connection
 $conn = mysqli_connect($servername, $username, $password, $dbname);
@@ -23,7 +22,6 @@ $stmt->execute();
 // Get result
 $result = $stmt->get_result();
 
-// var_dump($_SESSION(''))
 
 // Check if any rows were returned
 $details = array();
@@ -39,7 +37,6 @@ if ($result->num_rows > 0) {
         $details['postal_code'] = $data['postal_code'];
         $details['dob'] = $data['dob'];
         $details['gender'] = $data['gender'];
-        // Modify the echo statement according to your table columns
     }
 } else {
     echo "0 results";

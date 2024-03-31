@@ -1,164 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Savoria - Your food tent</title>
-    <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
-    <link rel="stylesheet" href="../css/main.css" />
-  </head>
-  <body>
-    <header class="header">
-      <nav class="header__nav">
-        <a class="header__brand" href="../index.php">
-          <img src="../img/savoria-logo.svg" alt="Logo" />
-        </a>
-        <ul class="header__list">
-          <li class="header__list-item"><a href="../index.php">Home</a></li>
-          <li class="header__list-item"><a href="./about.html">About</a></li>
-          <li class="header__list-item active">
-            <a href="./contact.html">Contact</a>
-          </li>
-          <li class="header__list-item">
-            <a class="header__list-item__cart" href="./cart/index.php"
-              >Cart <span class="header__list-item__cart-count">7</span></a
-            >
-          </li>
-        </ul>
-      </nav>
-    </header>
-    <!-- close .header -->
-    <main class="main">
-      <section class="container contact">
-        <h3 class="title"><span>Contact us</span></h3>
-        <img
-          class="img-responsive"
-          src="../img/contact-main.jpg"
-          alt="Contact us"
-        />
-        <div class="contact__content">
-          <div class="contact__main">
-            <h4 class="subtitle">We are pleased to hear from you!</h4>
-            <p>
-              We value our customers' feedback and inquiries, and we're thrilled
-              to hear from you. Whether you have questions about our products,
-              need assistance with an order, or simply want to connect with our
-              team, this is the place to do it.
-            </p>
-            <p>
-              Our dedicated support staff is here to provide you with prompt and
-              friendly assistance, ensuring your experience with us is nothing
-              short of exceptional. Feel free to reach out through the contact
-              form below, and we'll get back to you as soon as possible.
-            </p>
-            <p>
-              Thank you for choosing Savoria, and we look forward to serving you
-              with the utmost care and attention. Your satisfaction is our
-              priority.
-            </p>
-            <form class="contact__form" action="../index.php" method="post">
-              <div class="contact__form__loading"></div>
-              <div class="contact__form__inputs">
-                <div class="contact__form__inputs__input">
-                  <input
-                    id="name"
-                    type="text"
-                    name="name"
-                    placeholder="Name"
-                    required
-                  />
-                </div>
-                <div class="contact__form__inputs__input">
-                  <input
-                    id="lastname"
-                    type="text"
-                    name="lastname"
-                    placeholder="Lastname"
-                    required
-                  />
-                </div>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Savoria - Your food tent</title>
+  <link rel="shortcut icon" href="../img/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="../css/main.css" />
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+
+  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+
+  <style>
+    .dialog-custom-css {
+      font-family: Verdana, Arial, sans-serif;
+      font-size: .8em;
+
+    }
+  </style>
+
+</head>
+
+<body>
+  <!-- Dialouge box for subscription -->
+
+  <div id="dialog" title="Basic dialog">
+    <p>Thank You for contacting us. We will get back to you soon.</p>
+  </div>
+
+
+  <header class="header">
+    <nav class="header__nav">
+      <a class="header__brand" href="../index.php">
+        <img src="../img/savoria-logo.svg" alt="Logo" />
+      </a>
+      <ul class="header__list">
+        <li class="header__list-item"><a href="../index.php">Home</a></li>
+        <li class="header__list-item"><a href="./about.html">About</a></li>
+        <li class="header__list-item active">
+          <a href="./contact.html">Contact</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <!-- close .header -->
+  <main class="main">
+    <section class="container contact">
+      <h3 class="title"><span>Contact us</span></h3>
+      <img class="img-responsive" src="../img/contact-main.jpg" alt="Contact us" />
+      <div class="contact__content">
+        <div class="contact__main">
+          <h4 class="subtitle">We are pleased to hear from you!</h4>
+          <p>
+            We value our customers' feedback and inquiries, and we're thrilled
+            to hear from you. Whether you have questions about our products,
+            need assistance with an order, or simply want to connect with our
+            team, this is the place to do it.
+          </p>
+          <p>
+            Our dedicated support staff is here to provide you with prompt and
+            friendly assistance, ensuring your experience with us is nothing
+            short of exceptional. Feel free to reach out through the contact
+            form below, and we'll get back to you as soon as possible.
+          </p>
+          <p>
+            Thank you for choosing Savoria, and we look forward to serving you
+            with the utmost care and attention. Your satisfaction is our
+            priority.
+          </p>
+          <form class="contact__form" action="../index.php" method="post">
+            <div class="contact__form__loading"></div>
+            <div class="contact__form__inputs">
+              <div class="contact__form__inputs__input">
+                <input id="name" type="text" name="name" placeholder="Name" required />
               </div>
-              <div class="contact__form__inputs">
-                <div class="contact__form__inputs__input">
-                  <input
-                    id="email"
-                    type="email"
-                    name="email"
-                    placeholder="E-mail"
-                  />
-                </div>
-                <div class="contact__form__inputs__input">
-                  <input
-                    id="phone"
-                    type="phone"
-                    name="phone"
-                    placeholder="Phone (optional)"
-                  />
-                </div>
+              <div class="contact__form__inputs__input">
+                <input id="lastname" type="text" name="lastname" placeholder="Last name" required />
               </div>
-              <div class="contact__form__message">
-                <div class="contact__form__message__textarea">
-                  <textarea
-                    id="mensaje"
-                    name="message"
-                    rows="8"
-                    cols="80"
-                    placeholder="Message"
-                  ></textarea>
-                </div>
-                <button class="button button--wide" type="submit" name="submit">
-                  Submit
-                </button>
-              </div>
-            </form>
-          </div>
-          <div class="contact__info">
-            <div class="contact__info-map">
-              <h4 class="subtitle">Contact information</h4>
-              <ul class="contact__info-list">
-                <li>
-                  <span>Address:</span> 265 Yorkland Blvd #400, North York, ON
-                  M2J 1S5
-                </li>
-                <li>
-                  <span>Bussines hours:</span> monday to friday, from 9:00 AM to
-                  6:00 PM
-                </li>
-              </ul>
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.9787953414875!2d-79.335888!3d43.773298999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d2f6051664bf%3A0x8a14ccd77d82289a!2s265%20Yorkland%20Blvd%20%23400%2C%20North%20York%2C%20ON%20M2J%201S5!5e0!3m2!1ses!2sca!4v1690230149809!5m2!1ses!2sca"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
             </div>
+            <div class="contact__form__inputs">
+              <div class="contact__form__inputs__input">
+                <input id="email" type="email" name="email" placeholder="E-mail" required />
+              </div>
+              <div class="contact__form__inputs__input">
+                <input id="phone" type="phone" name="phone" placeholder="Phone (optional)" />
+              </div>
+            </div>
+            <div class="contact__form__message">
+              <div class="contact__form__message__textarea">
+                <textarea id="mensaje" name="message" rows="8" cols="80" placeholder="Message" required></textarea>
+              </div>
+              <button class="button button--wide" type="submit" name="submi" id="contact-submit">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+        <div class="contact__info">
+          <div class="contact__info-map">
+            <h4 class="subtitle">Contact information</h4>
+            <ul class="contact__info-list">
+              <li>
+                <span>Address:</span> 265 Yorkland Blvd #400, North York, ON
+                M2J 1S5
+              </li>
+              <li>
+                <span>Bussines hours:</span> monday to friday, from 9:00 AM to
+                6:00 PM
+              </li>
+            </ul>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.955573084403!2d-79.33804092336503!3d43.77378104462294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d3bca1a3f78f%3A0x815365ed6c3b957e!2sLambton%20College%20In%20Toronto!5e0!3m2!1sen!2sca!4v1711851594634!5m2!1sen!2sca"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <a class="popup-link button button--wide"
+              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.955573084403!2d-79.33804092336503!3d43.77378104462294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d3bca1a3f78f%3A0x815365ed6c3b957e!2sLambton%20College%20In%20Toronto!5e0!3m2!1sen!2sca!4v1711851594634!5m2!1sen!2sca">
+              Click Here To View Full Map</a>
           </div>
         </div>
-      </section>
-    </main>
-    <footer class="footer">
-      <div class="footer__items">
-        <div class="footer__item">
-          <img
-            class="footer__item-brand"
-            src="../img/savoria-logo-white.svg"
-            alt="Logo"
-          />
-        </div>
-        <div class="footer__item">
-          <h3 class="footer__item-title">Contact</h3>
-          <ul class="footer__item-list">
-            <li>
-              <address>265 Yorkland Blvd #400, North York, ON M2J 1S5</address>
-            </li>
-            <li><a href="mailto:contact@savoria.ca">contact@savoria.ca</a></li>
-            <li><a href="tel:+14164852098">+1 (416) 485-2098</a></li>
-          </ul>
-        </div>
       </div>
-      <div class="footer__copyright">
-        <p>Savoria&copy; 2023, all rights reserved</p>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__items">
+      <div class="footer__item">
+        <img class="footer__item-brand" src="../img/savoria-logo-white.svg" alt="Logo" />
       </div>
-    </footer>
-  </body>
+      <div class="footer__item">
+        <h3 class="footer__item-title">Contact</h3>
+        <ul class="footer__item-list">
+          <li>
+            <address>265 Yorkland Blvd #400, North York, ON M2J 1S5</address>
+          </li>
+          <li><a href="mailto:contact@savoria.ca">contact@savoria.ca</a></li>
+          <li><a href="tel:+14164852098">+1 (416) 485-2098</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__copyright">
+      <p>Savoria&copy; 2023, all rights reserved</p>
+    </div>
+  </footer>
+
+  <!-- script for jquery dialog -->
+  <script>
+    $(function () {
+      // initialize dialog box
+      $("#dialog").dialog({
+        title: "Thank You!!!",
+        dialogClass: "dialog-custom-css",
+        modal: true,
+        autoOpen: false,
+        show: { effect: "blind", duration: 800 },
+        buttons: [
+          {
+            text: "Ok",
+            icon: "ui-icon-heart",
+
+            click: function() {
+              $( this ).dialog( "close" );
+              // Reload the page
+              window.location.reload();
+            }
+          }
+        ]
+      });
+    });
+
+    // open dialog box on button click
+    $("#contact-submit").click(function (e) {
+      e.preventDefault();
+      $("#dialog").dialog("open");
+    });
+  </script>
+
+  <!-- script for magnify popup -->
+  <!-- Magnific Popup core JS file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"
+    integrity="sha512-C1zvdb9R55RAkl6xCLTPt+Wmcz6s+ccOvcr6G57lbm8M2fbgn2SUjUJbQ13fEyjuLViwe97uJvwa1EUf4F1Akw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- script to initialize magnify popup -->
+  <script>
+    $(document).ready(function () {
+      $('.popup-link').magnificPopup({
+        type: 'iframe',
+      });
+
+    });
+  </script>
+</body>
+
 </html>

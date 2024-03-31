@@ -2,8 +2,8 @@
 session_start();
 // Database connection parameters
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "web";
+$password = "web";
 $dbname = "example_db";
 
 // Create connection
@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Execute the update statement
     if ($stmt->execute()) {
         echo "Update successful.";
+        $_SESSION['username'] = $firstname;
         header('Location: ' . $_SERVER['HTTP_REFERER']);
         exit;
     } else {

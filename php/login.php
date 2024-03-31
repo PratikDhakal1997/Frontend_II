@@ -5,8 +5,8 @@ $_SESSION['login'] = "true";
 
 // Define database connection variables
 $servername = "localhost";
-$dbUsername = "root";
-$dbPassword = "";
+$dbUsername = "web";
+$dbPassword = "web";
 $dbname = "example_db";
 
 // Create a database connection

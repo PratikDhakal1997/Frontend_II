@@ -3,8 +3,8 @@ session_start();
 
 // Define database connection variables
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "web";
+$password = "web";
 $dbname = "example_db";
 
 // Create connection
@@ -47,6 +47,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       $row = mysqli_fetch_assoc($result);
       // Store the first name in session
       $_SESSION['username'] = $row['first_name'];
+      $_SESSION['email'] = $email;
+
+
+
 
       header('Location: ../index.php');
     }
