@@ -13,6 +13,9 @@
   <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 
+  <!-- Magnific Popup core CSS file -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.css">
+
   <style>
     .dialog-custom-css {
       font-family: Verdana, Arial, sans-serif;
@@ -112,8 +115,12 @@
               </li>
             </ul>
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.9787953414875!2d-79.335888!3d43.773298999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d2f6051664bf%3A0x8a14ccd77d82289a!2s265%20Yorkland%20Blvd%20%23400%2C%20North%20York%2C%20ON%20M2J%201S5!5e0!3m2!1ses!2sca!4v1690230149809!5m2!1ses!2sca"
-              allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.955573084403!2d-79.33804092336503!3d43.77378104462294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d3bca1a3f78f%3A0x815365ed6c3b957e!2sLambton%20College%20In%20Toronto!5e0!3m2!1sen!2sca!4v1711851594634!5m2!1sen!2sca"
+              width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <a class="popup-link"
+              href="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2880.955573084403!2d-79.33804092336503!3d43.77378104462294!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89d4d3bca1a3f78f%3A0x815365ed6c3b957e!2sLambton%20College%20In%20Toronto!5e0!3m2!1sen!2sca!4v1711851594634!5m2!1sen!2sca">Magnify
+              Map</a>
           </div>
         </div>
       </div>
@@ -140,6 +147,7 @@
     </div>
   </footer>
 
+  <!-- script for jquery dialog -->
   <script>
     $(function () {
       // initialize dialog box
@@ -153,8 +161,8 @@
           {
             text: "Ok",
             icon: "ui-icon-heart",
-            click: function() {
-              $( this ).dialog( "close" );
+            click: function () {
+              $(this).dialog("close");
             }
           }
         ]
@@ -165,6 +173,22 @@
     $("#contact-submit").click(function (e) {
       e.preventDefault();
       $("#dialog").dialog("open");
+    });
+  </script>
+
+  <!-- script for magnify popup -->
+  <!-- Magnific Popup core JS file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"
+    integrity="sha512-C1zvdb9R55RAkl6xCLTPt+Wmcz6s+ccOvcr6G57lbm8M2fbgn2SUjUJbQ13fEyjuLViwe97uJvwa1EUf4F1Akw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <!-- script to initialize magnify popup -->
+  <script>
+    $(document).ready(function () {
+      $('.popup-link').magnificPopup({
+        type: 'iframe',
+      });
+
     });
   </script>
 </body>
